@@ -1,5 +1,5 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.1.0"
+lock "~> 3.14.0"
 
 set :application, "fleamarket_sample_72a"
 set :repo_url, "git@github.com:yuichirobaba/fleamarket_sample_72a"
@@ -42,7 +42,7 @@ end
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-# set :deploy_to, "/var/www/my_app_name"
+ #set :deploy_to, "/var/www/fleamarket_sample_72a"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
