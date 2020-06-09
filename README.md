@@ -13,7 +13,7 @@
 |birthday_day|string|null: false|
 ## Association
 - belongs_to :delivery_date
-- belongs_to :creditcard
+- has_many :creditcards
 - has_many :comennts
 - has_many :products
 
@@ -31,6 +31,7 @@
 |address|string|null: false|
 |building|integer||
 |phone|integer|
+|user|reference|null: false, foreign_key: true|
 ## Association
 - belongs_to :user
 
@@ -46,19 +47,19 @@
 |area|string|null: false|
 |days|string|null: false|
 |user|reference|null: false, foreign_key: true|
+|category|reference|null: false, foreign_key: true|
 ## Association
 - belongs_to :user
-- has_many :comment
-- has_many :products_categorys
-- has_many :categorys, through: :products_categorys
+- belongs_to :category
+- has_many :comments
+- has_many :images
 
 # categorysテーブル
 |Column|Type|Options|
 |------|----|-------|
 |category|string|null: false|
 ## Association
-- has_many :products_categorys
-- has_many :products, throught: :producs_categorys
+- has_many :products
 
 # products_categorysテーブル
 |Column|Type|Options|
@@ -83,6 +84,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |user|reference|null: false, foreign_key: true|
+|customer|string|null: false|
+|card|string|null: false|
 ## Association
 - belongs_to :user
 
