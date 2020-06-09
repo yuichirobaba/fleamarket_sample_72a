@@ -61,15 +61,6 @@
 ## Association
 - has_many :products
 
-# products_categorysテーブル
-|Column|Type|Options|
-|------|----|-------|
-|product|reference|null: false, foreign_key: true|
-|category|reference|null: false, foreign_key: true|
-## Association
-- belongs_to :product
-- belongs_to :category
-
 # commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
