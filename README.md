@@ -57,7 +57,7 @@
 # categorysテーブル
 |Column|Type|Options|
 |------|----|-------|
-|category|string|null: false|
+|name|string|null: false|
 ## Association
 - has_many :products
 
