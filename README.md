@@ -12,10 +12,10 @@
 |birthday_month|string|null: false|
 |birthday_day|string|null: false|
 ## Association
-- belongs_to :delivery_date
-- has_many :creditcards
-- has_many :comennts
-- has_many :products
+- belongs_to :delivery_date　dependent: :destroy
+- has_many :creditcards　dependent: :destroy
+- has_many :comennts　dependent: :destroy
+- has_many :products　dependent: :destroy
 
 
 # delivery_datasテーブル
@@ -49,10 +49,10 @@
 |user|reference|null: false, foreign_key: true|
 |category|reference|null: false, foreign_key: true|
 ## Association
-- belongs_to :user
-- belongs_to :category
-- has_many :comments
-- has_many :images
+- belongs_to :user　dependent: :destroy
+- belongs_to :category　dependent: :destroy
+- has_many :comments　dependent: :destroy
+- has_many :images　dependent: :destroy
 
 # categorysテーブル
 |Column|Type|Options|
