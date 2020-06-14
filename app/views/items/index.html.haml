@@ -1,0 +1,282 @@
+!!!
+%header.pcheader
+  .toppage
+    .topheader
+      %h1.icon
+        %a= image_tag src="/assets/logo.png", size: "141x41"
+      .seatch
+        %form{action:"#",acceptcharset:"UTF-8",method:"get",class:"seatch__form"}
+          %input{placeholder: "キーワードから探す",class:"seatch__box",type:"text",name:"seacth[content]",id:"seacth_content"}
+          %button{type:"submit",class:"seatch__submit"}
+            .seatch__icon
+              =image_tag src="/assets/icon-search 1.png",size:"20x20"
+    .category
+      %ul.listleft
+        .listleft__left
+          カテゴリー
+        .listleft__right
+          ブランド
+      %ul.listright
+        .listright__left
+          ログイン
+        .listright__right
+          新規会員登録
+
+.main
+  %section.mainpage
+    .content
+      %h2.content__title
+        人生を変えるフリマアプリ
+      %p.content__text
+        FURIMAはだれでもかんたんに出品できる・購入できる
+        %br
+          フリマアプリです
+      .content__btn
+        %a.appbtn=image_tag src="/assets/AppleStore.svg",size:"180x55"
+        %a.goobtn=image_tag src="/assets/googleplay.svg",size:"180x55"
+
+
+  %section.maininformation
+    %h2.subtitle
+      FURIMAが選ばれる理由
+      %after
+
+    %ul.lists
+      %li.list
+        .list__pic
+          %span.number 1
+          =image_tag src="/assets/pict-reason-01.jpg",size:"236x236"
+        %h3.list__text
+          %span 3分
+          ですぐに出品
+        %p.list__information
+          スマホで入力するだけで簡単に出品できる
+
+      %li.list
+        .list__pic
+          %span.number 2
+          =image_tag src="/assets/pict-reason-02.jpg",size:"236x236"
+        %h3.list__text
+          %span シンプル
+          で使いやすい
+        %p.list__information
+          めんどくさい入力は必要なく、検索も購入もスムーズ！
+      %li.list.list--3
+        .list__pic
+          %span.number 3
+          =image_tag src="/assets/pict-reason-03.jpg",size:"236x236"
+        %h3.list__text
+          手数料
+          %span 業界最安
+        %p.list__information
+          最大３％でお得に出品＆購入！
+
+  %section.download
+    .download__top
+      %h2.title
+        会員数日本１位
+      %p.text
+        FURIMAは、フリマアプリでもっとも人気。
+        %br
+        出品・購入回数も業界最多です！
+        %br
+        欲しかったあの商品に出会えるかもしれません。
+      .download__btn
+        %a.appbtn=image_tag src="/assets/AppleStore.svg",size:"180x55"
+        %a.goobtn=image_tag src="/assets/googleplay.svg",size:"180x55"
+
+  %section.characteristic
+    %h2.header
+      FURIMAの特徴
+      %after
+    .peoples
+      %section.people
+        %figure.people__img
+          =image_tag src="/assets/icon-01.png",size:"92x141"
+        %h3.people__title 
+          簡単に売り買いできる
+        %p.people__text
+          スマホ一つで、いつでもどこでも簡単に出品・購入が可能！
+      
+      %section.people
+        %figure.people__img
+          =image_tag src="/assets/icon-03.png",size:"92x141"
+        %h3.people__title 
+          簡単に売り買いできる
+        %p.people__text
+          スマホ一つで、いつでもどこでも簡単に出品・購入が可能！
+      
+      %section.people
+        %figure.people__img
+          =image_tag src="/assets/icon-04.png",size:"92x141"
+        %h3.people__title 
+          簡単に売り買いできる
+        %p.people__text
+          スマホ一つで、いつでもどこでも簡単に出品・購入が可能！
+  
+  %section.pickup
+    %h2.header ピックアップカテゴリー
+    
+    .productbox
+      .productbox__head
+        %h3.body 新規商品
+        
+      .productlists
+        .productlist
+          %figure.productlist__img
+            =image_tag src="/assets/reebok.jpg"
+          .productlist__text
+            %h3.name reebok
+            .text
+              %ul
+                %li 25000円
+                %li.icon
+                  =icon('fas', 'star')
+                  0
+              %p （税込）
+
+        .productlist
+          %figure.productlist__img
+            =image_tag src="/assets/stansmith.jpg"
+          .productlist__text
+            %h3.name adidas
+            .text
+              %ul
+                %li 20000円
+                %li.icon
+                  =icon('fas', 'star')
+                  0
+              %p （税込）
+
+        .productlist
+          %figure.productlist__img             
+            =image_tag src="/assets/nike-air-max-95.jpg"
+          .productlist__text
+            %h3.name nike
+            .text
+              %ul
+                %li 20000円
+                %li.icon
+                  =icon('fas', 'star')
+                  0
+              %p （税込）
+
+        .productlist
+          %figure.productlist__img
+            =image_tag src="/assets/converse.jpg"
+          .productlist__text
+            %h3.name converse
+            .text
+              %ul
+                %li 6000円
+                %li.icon
+                  =icon('fas', 'star')
+                  0
+              %p （税込）
+
+  %section.pickuplist
+    %h2.header ピックアップブランド
+    .productbox
+      .productbox__head
+        %h3.body アーカイバ
+        
+      .productlists
+        .productlist
+          %figure.productlist__img
+            =image_tag src="/assets/reebok.jpg"
+          .productlist__text
+            %h3.name reebok
+            .text
+              %ul
+                %li 25000円
+                %li.icon
+                  =icon('fas', 'star')
+                  0
+              %p （税込）
+
+        .productlist
+          %figure.productlist__img
+            =image_tag src="/assets/stansmith.jpg"
+          .productlist__text
+            %h3.name adidas
+            .text
+              %ul
+                %li 20000円
+                %li.icon
+                  =icon('fas', 'star')
+                  0
+              %p （税込）
+
+        .productlist
+          %figure.productlist__img             
+            =image_tag src="/assets/nike-air-max-95.jpg"
+          .productlist__text
+            %h3.name nike
+            .text
+              %ul
+                %li 20000円
+                %li.icon
+                  =icon('fas', 'star')
+                  0
+              %p （税込）
+
+        .productlist
+          %figure.productlist__img
+            =image_tag src="/assets/converse.jpg"
+          .productlist__text
+            %h3.name converse
+            .text
+              %ul
+                %li 6000円
+                %li.icon
+                  =icon('fas', 'star')
+                  0
+              %p （税込）
+  
+  %aside.appinner
+    .inner
+      %h2.inner__subtitle だれでもかんたん、人生を変えるフリマアプリ
+      %p.inner__body 今すぐ無料ダウンロード！
+      .inner__app
+        %a.appbtn=image_tag src="/assets/AppleStore.svg",size:"180x55"
+        %a.goobtn=image_tag src="/assets/googleplay.svg",size:"180x55"
+
+  
+  .footer
+    %ul.contents
+      %li.content
+        %h2.content__head FURIMAについて
+        %ul
+          %li
+            会社概要（運営会社）
+          %li
+            プライバシーポリシー
+          %li
+            FURIMA利用規約
+          %li
+            ポイントに関する規約
+
+      %li.content
+        %h2.content__head FURIMAを見る
+        %ul
+          %li
+            カテゴリー一覧
+          %li
+            ブランド一覧
+
+      %li.content
+        %h2.content__head ヘルプ＆ガイド
+        %ul
+          %li
+            FURIMAガイド
+          %li
+            FURIMAロゴ利用ガイドライン
+          %li
+            お知らせ
+    .content__logo
+      =image_tag src="/assets/logo-white.png", size: "160x46"
+      %p ©️ FURIMA
+  .fixbtn
+    %span.fixbtn__text 出品する
+    .fixbtn__img 
+      =image_tag src="/assets/icon_camera.png", size: "54x54"
