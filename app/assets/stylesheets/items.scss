@@ -44,20 +44,10 @@
           }
           &__item{
             background-color: red;
-            border-radius: 3px;
-            margin-left: 8px;
-            padding: 2px 3px;
-            color:white;
-            font-size: 12px;
-            font-weight: bold;
+            @include item;
             &__gray{
               background-color: lightgray;
-              border-radius: 3px;
-              margin-left: 8px;
-              padding: 2px 3px;
-              color:white;
-              font-size: 12px;
-              font-weight: bold;
+              @include item;
             }
           }
         }
