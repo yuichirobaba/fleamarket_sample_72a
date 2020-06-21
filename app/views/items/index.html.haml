@@ -3,7 +3,9 @@
   .toppage
     .topheader
       %h1.icon
-        %a= image_tag src="/assets/logo.png", size: "141x41"
+        =link_to "#" do
+          = image_tag src="/assets/logo.png", size: "141x41"
+      
       .seatch
         %form{action:"#",acceptcharset:"UTF-8",method:"get",class:"seatch__form"}
           %input{placeholder: "キーワードから探す",class:"seatch__box",type:"text",name:"seacth[content]",id:"seacth_content"}
@@ -13,14 +15,46 @@
     .category
       %ul.listleft
         .listleft__left
-          カテゴリー
+          %a{class: "catbtn",id: "catbtn", href: "#"} カテゴリー
+          .treecategory
+            %ul.categoryrampage
+              %li.categoryrampage__item
+                %a{id: "1",href:"#"} レディース
+              %li.categoryrampage__item
+                %a{id:"2",href:"#"} メンズ
+              %li.categoryrampage__item
+                %a{id:"3",href:"#"} ベビー・キッズ
+              %li.categoryrampage__item
+                %a{id:"4",href:"#"} インテリア・住まい・小物
+              %li.categoryrampage__item
+                %a{id:"5",href:"#"} 本・音楽・ゲーム
+              %li.categoryrampage__item
+                %a{id:"6",href:"#"} おもちゃ・ホビー・グッズ
+              %li.categoryrampage__item
+                %a{id:"7",href:"#"} コスメ・香水・美容
+              %li.categoryrampage__item
+                %a{id:"8",href:"#"} 家電・スマホ・カメラ
+              %li.categoryrampage__item
+                %a{id:"9",href:"#"} スポーツ・レジャー
+              %li.categoryrampage__item
+                %a{id:"10",href:"#"} ハンドメイド
+              %li.categoryrampage__item
+                %a{id:"11",href:"#"} チケット
+              %li.categoryrampage__item
+                %a{id:"12",href:"#"} 自動車・オートバイ
+              %li.categoryrampage__item
+                %a{id:"13",href:"#"} その他
+
         .listleft__right
-          ブランド
+          =link_to "#" do
+            ブランド
       %ul.listright
         .listright__left
-          ログイン
+          =link_to "#" do
+            ログイン
         .listright__right
-          新規会員登録
+          =link_to "#" do
+            新規会員登録
 
 .main
   %section.mainpage
@@ -32,8 +66,10 @@
         %br
           フリマアプリです
       .content__btn
-        %a.appbtn=image_tag src="/assets/AppleStore.svg",size:"180x55"
-        %a.goobtn=image_tag src="/assets/googleplay.svg",size:"180x55"
+        =link_to "#" do
+          .appbtn=image_tag src="/assets/AppleStore.svg",size:"180x55"
+        =link_to "#" do
+          .goobtn=image_tag src="/assets/googleplay.svg",size:"180x55"
 
 
   %section.maininformation
@@ -82,8 +118,10 @@
         %br
         欲しかったあの商品に出会えるかもしれません。
       .download__btn
-        %a.appbtn=image_tag src="/assets/AppleStore.svg",size:"180x55"
-        %a.goobtn=image_tag src="/assets/googleplay.svg",size:"180x55"
+        =link_to "#" do
+          .appbtn=image_tag src="/assets/AppleStore.svg",size:"180x55"
+        =link_to "#" do
+          .goobtn=image_tag src="/assets/googleplay.svg",size:"180x55"
 
   %section.characteristic
     %h2.header
@@ -92,7 +130,7 @@
     .peoples
       %section.people
         %figure.people__img
-          =image_tag src="/assets/icon-01.png",size:"92x141"
+          =image_tag src="/assets/icon-01.png"
         %h3.people__title 
           簡単に売り買いできる
         %p.people__text
@@ -100,146 +138,158 @@
       
       %section.people
         %figure.people__img
-          =image_tag src="/assets/icon-03.png",size:"92x141"
+          =image_tag src="/assets/icon-03.png"
         %h3.people__title 
-          簡単に売り買いできる
+          売上金は即日振込みに対応
         %p.people__text
-          スマホ一つで、いつでもどこでも簡単に出品・購入が可能！
+          午前９時までに振込を依頼いただければ、翌日に指定の口座に入金致します！
       
       %section.people
         %figure.people__img
-          =image_tag src="/assets/icon-04.png",size:"92x141"
+          =image_tag src="/assets/icon-04.png"
         %h3.people__title 
-          簡単に売り買いできる
+          ざまざまな支払いに対応
         %p.people__text
-          スマホ一つで、いつでもどこでも簡単に出品・購入が可能！
+          お支払いはクレジットカードだけでなくポイントや売上金など多彩な方法があります。
   
   %section.pickup
     %h2.header ピックアップカテゴリー
     
     .productbox
       .productbox__head
-        %h3.body 新規商品
+        =link_to "#"do
+          %h3.body 新規商品
         
       .productlists
         .productlist
-          %figure.productlist__img
-            =image_tag src="/assets/reebok.jpg"
-          .productlist__text
-            %h3.name reebok
-            .text
-              %ul
-                %li 25000円
-                %li.icon
-                  =icon('fas', 'star')
-                  0
-              %p （税込）
+          =link_to "#" do
+            %figure.productlist__img
+              =image_tag src="/assets/reebok.jpg"
+            .productlist__text
+              %h3.name reebok
+              .text
+                %ul
+                  %li 25000円
+                  %li.icon
+                    =icon('fas', 'star')
+                    0
+                %p （税込）
 
         .productlist
-          %figure.productlist__img
-            =image_tag src="/assets/stansmith.jpg"
-          .productlist__text
-            %h3.name adidas
-            .text
-              %ul
-                %li 20000円
-                %li.icon
-                  =icon('fas', 'star')
-                  0
-              %p （税込）
+          =link_to "#" do
+            %figure.productlist__img
+              =image_tag src="/assets/stansmith.jpg"
+            .productlist__text
+              %h3.name adidas
+              .text
+                %ul
+                  %li 20000円
+                  %li.icon
+                    =icon('fas', 'star')
+                    0
+                %p （税込）
 
         .productlist
-          %figure.productlist__img             
-            =image_tag src="/assets/nike-air-max-95.jpg"
-          .productlist__text
-            %h3.name nike
-            .text
-              %ul
-                %li 20000円
-                %li.icon
-                  =icon('fas', 'star')
-                  0
-              %p （税込）
+          =link_to "#" do
+            %figure.productlist__img
+              =image_tag src="/assets/nike-air-max-95.jpg"
+            .productlist__text
+              %h3.name nike
+              .text
+                %ul
+                  %li 20000円
+                  %li.icon
+                    =icon('fas', 'star')
+                    0
+                %p （税込）
 
         .productlist
-          %figure.productlist__img
-            =image_tag src="/assets/converse.jpg"
-          .productlist__text
-            %h3.name converse
-            .text
-              %ul
-                %li 6000円
-                %li.icon
-                  =icon('fas', 'star')
-                  0
-              %p （税込）
+          =link_to "#" do
+            %figure.productlist__img
+              =image_tag src="/assets/converse.jpg"
+            .productlist__text
+              %h3.name converse
+              .text
+                %ul
+                  %li 6000円
+                  %li.icon
+                    =icon('fas', 'star')
+                    0
+                %p （税込）
 
   %section.pickuplist
     %h2.header ピックアップブランド
     .productbox
       .productbox__head
-        %h3.body アーカイバ
+        =link_to "#"do
+          %h3.body アーカイバ
         
       .productlists
         .productlist
-          %figure.productlist__img
-            =image_tag src="/assets/reebok.jpg"
-          .productlist__text
-            %h3.name reebok
-            .text
-              %ul
-                %li 25000円
-                %li.icon
-                  =icon('fas', 'star')
-                  0
-              %p （税込）
+          =link_to "#" do
+            %figure.productlist__img
+              =image_tag src="/assets/reebok.jpg"
+            .productlist__text
+              %h3.name reebok
+              .text
+                %ul
+                  %li 25000円
+                  %li.icon
+                    =icon('fas', 'star')
+                    0
+                %p （税込）
 
         .productlist
-          %figure.productlist__img
-            =image_tag src="/assets/stansmith.jpg"
-          .productlist__text
-            %h3.name adidas
-            .text
-              %ul
-                %li 20000円
-                %li.icon
-                  =icon('fas', 'star')
-                  0
-              %p （税込）
+          =link_to "#" do
+            %figure.productlist__img
+              =image_tag src="/assets/stansmith.jpg"
+            .productlist__text
+              %h3.name adidas
+              .text
+                %ul
+                  %li 20000円
+                  %li.icon
+                    =icon('fas', 'star')
+                    0
+                %p （税込）
 
         .productlist
-          %figure.productlist__img             
-            =image_tag src="/assets/nike-air-max-95.jpg"
-          .productlist__text
-            %h3.name nike
-            .text
-              %ul
-                %li 20000円
-                %li.icon
-                  =icon('fas', 'star')
-                  0
-              %p （税込）
+          =link_to "#" do
+            %figure.productlist__img
+              =image_tag src="/assets/nike-air-max-95.jpg"
+            .productlist__text
+              %h3.name nike
+              .text
+                %ul
+                  %li 20000円
+                  %li.icon
+                    =icon('fas', 'star')
+                    0
+                %p （税込）
 
         .productlist
-          %figure.productlist__img
-            =image_tag src="/assets/converse.jpg"
-          .productlist__text
-            %h3.name converse
-            .text
-              %ul
-                %li 6000円
-                %li.icon
-                  =icon('fas', 'star')
-                  0
-              %p （税込）
+          =link_to "#" do
+            %figure.productlist__img
+              =image_tag src="/assets/converse.jpg"
+            .productlist__text
+              %h3.name converse
+              .text
+                %ul
+                  %li 6000円
+                  %li.icon
+                    =icon('fas', 'star')
+                    0
+                %p （税込）
   
   %aside.appinner
     .inner
       %h2.inner__subtitle だれでもかんたん、人生を変えるフリマアプリ
       %p.inner__body 今すぐ無料ダウンロード！
       .inner__app
-        %a.appbtn=image_tag src="/assets/AppleStore.svg",size:"180x55"
-        %a.goobtn=image_tag src="/assets/googleplay.svg",size:"180x55"
+        =link_to "#"do
+          .appbtn=image_tag src="/assets/AppleStore.svg",size:"180x55"
+        =link_to "#"do
+          .goobtn=image_tag src="/assets/googleplay.svg",size:"180x55"
 
   
   .footer
@@ -248,35 +298,47 @@
         %h2.content__head FURIMAについて
         %ul
           %li
-            会社概要（運営会社）
+            =link_to "#" do
+              会社概要（運営会社）
           %li
-            プライバシーポリシー
+            =link_to "#" do
+              プライバシーポリシー
           %li
-            FURIMA利用規約
+            =link_to "#" do
+              FURIMA利用規約
           %li
-            ポイントに関する規約
+            =link_to "#" do
+              ポイントに関する規約
 
       %li.content
         %h2.content__head FURIMAを見る
         %ul
           %li
-            カテゴリー一覧
+            =link_to "#" do
+              カテゴリー一覧
           %li
-            ブランド一覧
+            =link_to "#" do
+              ブランド一覧
 
       %li.content
         %h2.content__head ヘルプ＆ガイド
         %ul
           %li
-            FURIMAガイド
+            =link_to "#" do
+              FURIMAガイド
           %li
-            FURIMAロゴ利用ガイドライン
+            =link_to "#" do
+              FURIMAロゴ利用ガイドライン
           %li
-            お知らせ
+            =link_to "#" do
+              お知らせ
     .content__logo
-      =image_tag src="/assets/logo-white.png", size: "160x46"
+      =link_to "#" do
+        =image_tag src="/assets/logo-white.png", size: "160x46"
       %p ©️ FURIMA
+  
   .fixbtn
-    %span.fixbtn__text 出品する
-    .fixbtn__img 
-      =image_tag src="/assets/icon_camera.png", size: "54x54"
+    =link_to "#" do
+      %span.fixbtn__text 出品する
+      .fixbtn__img 
+        =image_tag src="/assets/icon_camera.png", size: "54x54"
