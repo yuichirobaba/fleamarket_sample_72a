@@ -11,7 +11,7 @@
           %input{placeholder: "キーワードから探す",class:"seatch__box",type:"text",name:"seacth[content]",id:"seacth_content"}
           %button{type:"submit",class:"seatch__submit"}
             .seatch__icon
-              =image_tag "/assets/icon-search 1.png",size:"20x20"
+              =image_tag asset_path('icon-search 1.png'),size:"20x20"
     .category
       %ul.listleft
         .listleft__left
@@ -83,9 +83,9 @@
           フリマアプリです
       .content__btn
         =link_to "#" do
-          .appbtn=image_tag "/assets/AppleStore.svg",size:"180x55"
+          .appbtn=image_tag asset_path('AppleStore.svg'),size:"180x55"
         =link_to "#" do
-          .goobtn=image_tag "/assets/googleplay.svg",size:"180x55"
+          .goobtn=image_tag asset_path('googleplay.svg'),size:"180x55"
 
 
   %section.maininformation
@@ -97,7 +97,7 @@
       %li.list
         .list__pic
           %span.number 1
-          =image_tag "/assets/pict-reason-01.jpg",size:"236x236"
+          =image_tag asset_path('pict-reason-01.jpg'),size:"236x236"
         %h3.list__text
           %span 3分
           ですぐに出品
@@ -107,7 +107,7 @@
       %li.list
         .list__pic
           %span.number 2
-          =image_tag "/assets/pict-reason-02.jpg",size:"236x236"
+          =image_tag asset_path('pict-reason-02.jpg'),size:"236x236"
         %h3.list__text
           %span シンプル
           で使いやすい
@@ -116,7 +116,7 @@
       %li.list.list--3
         .list__pic
           %span.number 3
-          =image_tag "/assets/pict-reason-03.jpg",size:"236x236"
+          =image_tag asset_path('pict-reason-03.jpg'),size:"236x236"
         %h3.list__text
           手数料
           %span 業界最安
@@ -135,9 +135,9 @@
         欲しかったあの商品に出会えるかもしれません。
       .download__btn
         =link_to "#" do
-          .appbtn=image_tag "/assets/AppleStore.svg",size:"180x55"
+          .appbtn=image_tag asset_path('AppleStore.svg'),size:"180x55"
         =link_to "#" do
-          .goobtn=image_tag "/assets/googleplay.svg",size:"180x55"
+          .goobtn=image_tag asset_path('googleplay.svg'),size:"180x55"
 
   %section.characteristic
     %h2.header
@@ -146,7 +146,7 @@
     .peoples
       %section.people
         %figure.people__img
-          =image_tag "/assets/icon-01.png"
+          =image_tag asset_path('icon-01.png')
         %h3.people__title 
           簡単に売り買いできる
         %p.people__text
@@ -154,7 +154,7 @@
       
       %section.people
         %figure.people__img
-          =image_tag "/assets/icon-03.png"
+          =image_tag asset_path('icon-03.png')
         %h3.people__title 
           売上金は即日振込みに対応
         %p.people__text
@@ -162,7 +162,7 @@
       
       %section.people
         %figure.people__img
-          =image_tag "/assets/icon-04.png"
+          =image_tag asset_path('icon-04.png')
         %h3.people__title 
           ざまざまな支払いに対応
         %p.people__text
@@ -180,7 +180,7 @@
         .productlist
           =link_to "#" do
             %figure.productlist__img
-              =image_tag "/assets/reebok.jpg"
+              =image_tag asset_path('reebok.jpg')
             .productlist__text
               %h3.name reebok
               .text
@@ -194,7 +194,7 @@
         .productlist
           =link_to "#" do
             %figure.productlist__img
-              =image_tag "/assets/stansmith.jpg"
+              =image_tag asset_path('stansmith.jpg')
             .productlist__text
               %h3.name adidas
               .text
@@ -208,7 +208,7 @@
         .productlist
           =link_to "#" do
             %figure.productlist__img
-              =image_tag "/assets/nike-air-max-95.jpg"
+              =image_tag asset_path('nike-air-max-95.jpg')
             .productlist__text
               %h3.name nike
               .text
@@ -222,7 +222,7 @@
         .productlist
           =link_to "#" do
             %figure.productlist__img
-              =image_tag "/assets/converse.jpg"
+              =image_tag asset_path('converse.jpg')
             .productlist__text
               %h3.name converse
               .text
@@ -244,7 +244,7 @@
         .productlist
           =link_to "#" do
             %figure.productlist__img
-              =image_tag "/assets/reebok.jpg"
+              =image_tag asset_path('reebok.jpg')
             .productlist__text
               %h3.name reebok
               .text
@@ -258,7 +258,7 @@
         .productlist
           =link_to "#" do
             %figure.productlist__img
-              =image_tag "/assets/stansmith.jpg"
+              =image_tag aseet_path('stansmith.jpg')
             .productlist__text
               %h3.name adidas
               .text
@@ -272,7 +272,8 @@
         .productlist
           =link_to "#" do
             %figure.productlist__img
-              =image_tag "/assets/nike-air-max-95.jpg"
+              =image_tag asset_path('nike-air-max-95.jpg')
+
             .productlist__text
               %h3.name nike
               .text
@@ -286,7 +287,7 @@
         .productlist
           =link_to "#" do
             %figure.productlist__img
-              =image_tag "/assets/converse.jpg"
+              =image_tag asset_path('converse.jpg')
             .productlist__text
               %h3.name converse
               .text
@@ -303,9 +304,9 @@
       %p.inner__body 今すぐ無料ダウンロード！
       .inner__app
         =link_to "#"do
-          .appbtn=image_tag "/assets/AppleStore.svg",size:"180x55"
+          .appbtn=image_tag asset_path('AppleStore.svg'),size:"180x55"
         =link_to "#"do
-          .goobtn=image_tag "/assets/googleplay.svg",size:"180x55"
+          .goobtn=image_tag asset_path('googleplay.svg'),size:"180x55"
 
   
   .footer
@@ -350,11 +351,11 @@
               お知らせ
     .content__logo
       =link_to "#" do
-        =image_tag "/assets/logo-white.png", size: "160x46"
+        =image_tag ('logo-white.png'), size: "160x46"
       %p ©️ FURIMA
   
   .fixbtn
     =link_to "#" do
       %span.fixbtn__text 出品する
       .fixbtn__img 
-        =image_tag src="/assets/icon_camera.png", size: "54x54"
+        =image_tag asset_path('icon_camera.png'), size: "54x54"

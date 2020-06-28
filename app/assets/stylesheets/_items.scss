@@ -70,7 +70,7 @@ a{
 a.catbtn{
   color: black;
   text-decoration: none;
-  background-image:url(/assets/icon_category.png);
+  background-image:image-url("icon_category.png");
 }
 }
 .treecategory{
@@ -100,7 +100,7 @@ a.catbtn{
 }
 .mainpage{
   height: 560px;
-  background-image:url(/assets/bg-mainVisual-pict_pc.jpeg);
+  background-image:image-url("bg-mainVisual-pict_pc.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -206,7 +206,7 @@ padding:35px 0 0 0;
     color: #fff;
 }
 .download{
-  background-image: url(/assets/bg-topMiddleDl-pict.jpg);
+  background-image: image-url("bg-topMiddleDl-pict.jpg");
   background-position: bottom right;
   height: 400px;
   background-size: cover;
@@ -295,7 +295,7 @@ margin: 0 auto;
 
 }
 .appinner{
-  background-image: url(/assets/bg-appBanner-pict.jpg);
+  background-image: image-url("bg-appBanner-pict.jpg");
 padding: 100px 40px;
 position: relative;
 background-size: cover;
