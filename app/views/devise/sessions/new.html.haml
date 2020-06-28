@@ -1,0 +1,37 @@
+= render 'layouts/sellheader'
+.single-main
+  .login-panel
+    .login-no-account
+      %br/
+      アカウントをお持ちでない方はこちら
+      .login-no-account__new-account
+        = link_to user_registration_signup_index_path, class: '' do
+          %i.fab.fa-google-square.new-account-icon
+          %span.new-account-text
+            新規会員登録
+    .login-form-inner
+      .login-form-inner__google
+        %i.fab.fa-google-square.google-icon
+        %span.google-text
+          = fa_icon 'google', class: 'google-icon'
+          Googleでログイン
+      .login-form-inner__facebook
+        %i.fab.fa-facebook-plus.facebook-icon
+        %span.facebook-text
+          = fa_icon 'facebook-square', class: 'icon'
+          Facebookでログイン
+      .login-form-inner__apple
+        %i.fab.fa-apple-plus.apple-icon
+        %span.apple-text
+          = fa_icon 'apple', class: 'icon'
+          Appleでログイン
+    .form-group
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .form-group__email
+          = f.email_field :email, autocomplete: "email",placeholder:"メールアドレス"
+        .form-group__password
+          = f.password_field :password, autocomplete: "current-password",placeholder:"パスワード"
+        .form-group__login-btn
+          %span.login-btn-text
+            ログイン
+= render 'layouts/sellfooter'
