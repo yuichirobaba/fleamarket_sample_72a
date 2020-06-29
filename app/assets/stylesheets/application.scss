@@ -1,10 +1,12 @@
-@import"reset";
-@import"items";
+@import "reset";
+@import "items";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-@import "./modules/signup";
+@import "./modules/users";
 @import "./modules/signup-view";
 @import "./modules/login";
 @import "./modules/sellheader";
 @import "./modules/sellfooter";
+@import "./config/mixin";
+@import "./modules/products";
