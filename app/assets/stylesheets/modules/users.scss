@@ -1,3 +1,138 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.wrapper {
+  background-color: #f5f5f5;
+  .sign-box{
+    background-color: white;
+    width: 570px;
+    height:500px;
+    position: relative;
+    margin: 0 auto;
+    cursor: auto;
+    &__no-account{
+      width:570px;
+      height:60px;
+      border-bottom: solid;
+      border-color:#f5f5f5;
+      border-width:1px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 60px;
+    }
+    &__from-sns{
+      width:574px;
+      height:160px;
+      &__mail{
+        height:50px;
+        width:328px;
+        background-color: red;
+        position: relative;
+        color: white;
+        margin: 32px auto 16px;
+        text-align: center;
+        line-height: 50px;
+        border-radius: 4px;
+        .mail-icon{
+          font-size:20px;
+          color:white;
+          line-height:50px;
+          position: absolute;
+          left:5%;
+        }
+        .mail-text{
+          font-size:14px;
+          line-height:50px;
+          position: absolute;
+          left:32%;
+          text-decoration: none;
+        }
+        a {
+          text-decoration: none;
+          color: white;
+        }
+      }
+      &__google{
+        height:50px;
+        width:328px;
+        margin: 0 auto;
+        background-color: white;
+        position: relative;
+        color:black;
+        border: 1px solid;
+        text-align: center;
+        border-radius: 4px;
+        .google-icon{
+          font-size:20px;
+          color:black;
+          line-height:50px;
+          position: absolute;
+          left: 5%;
+        }
+        .google-text{
+          font-size:14px;
+          line-height:50px;
+          position: absolute;
+          left:32%;
+        }
+        a {
+          text-decoration: none;
+          color: black;
+          font-size:14px;
+          line-height:50px;
+          left:32%;
+        }
+      }
+      &__facebook {
+        height:50px;
+        width:328px;
+        margin: 32px auto 16px;
+        background-color:#375285;
+        color:white;
+        position: relative;
+        border-radius: 4px;
+        .facebook-icon{
+          font-size:20px;
+          color:white;
+          line-height:50px;
+          position: absolute;
+          right: 200px;
+        }
+        .facebook-text{
+          font-size:14px;
+          line-height:50px;
+          position: absolute;
+          left:30%;
+        }
+      }
+      &__apple{
+        height:50px;
+        width:328px;
+        margin: 0 auto;
+        background-color: black;
+        position: relative;
+        color:white;
+        border-radius: 4px;
+        .apple-icon{
+          font-size:20px;
+          color:white;
+          line-height:50px;
+          position: absolute;
+          right: 178px;
+        }
+        .apple-text{
+          font-size:14px;
+          line-height:50px;
+          position: absolute;
+          left:32%;
+        }
+      }
+    
+    .sign-box__text {
+      text-align: center;
+      color: gray;
+      padding-top: 30px;
+      font-size: 14px;
+    }
+  }
+  }
+  }
+  

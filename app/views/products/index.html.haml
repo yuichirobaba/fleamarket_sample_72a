@@ -4,7 +4,8 @@
     
 
     .header
-      = link_to image_tag("logo.png", height: '50px', width: '185px', class: "header__icon")
+      = link_to root_path do
+        = image_tag("logo.png", height: '50px', width: '185px', class: "header__icon")
       
     .product
       .product__box
@@ -151,4 +152,4 @@
           = link_to 'ロゴ利用ガイドライン', "#", class: "footer__box__content__link"
           = link_to 'お知らせ', "#", class: "footer__box__content__link"
 
-      = link_to image_tag("logo-white.png", height: '50px', width: '185px', class: "footer__icon"
+      = link_to image_tag("logo-white.png", height: '50px', width: '185px', class: "footer__icon")
