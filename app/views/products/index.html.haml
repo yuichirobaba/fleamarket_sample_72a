@@ -1,0 +1,154 @@
+.wrapper
+
+  .display
+    
+
+    .header
+      = link_to image_tag("logo.png", height: '50px', width: '185px', class: "header__icon")
+      
+    .product
+      .product__box
+        .product__box__form-label
+          %label.product__box__form-label__title
+            商品画像
+          %span.product__box__form-label__item
+            必須
+        %p.product__box__number-sheets
+          最大10枚までアップロード出来ます
+        .product__box__photo   
+          = image_tag("icon_camera.png", height: '25px', width: '25px', class: "product__box__photo__icon")
+          %p.product__box__photo__line
+            クリックして画像をアップロード
+            
+
+      .product__box
+        .product__box__form-label
+          %label.product__box__form-label__title
+            商品名
+          %span.product__box__form-label__item
+            必須
+          %input.product__box__name 
+            
+            
+
+        .product__box__form-label
+          %label.product__box__form-label__title
+            商品の説明
+          %span.product__box__form-label__item
+            必須
+        .product__box__explanation
+          %p
+            商品の説明（必須 1,000文字以内）
+            (色、素材、重さ、定価、注意点など)
+          %dr
+            例) 2019年に購入したキャップです、1度被っただけで傷も汚れもありません
+
+      
+      .product__box
+        %p.product__box__genre
+          商品の詳細
+        .product__box__form-label
+          %label.product__box__form-label__title
+            カテゴリー
+          %span.product__box__form-label__item
+            必須
+        .product__box__category
+          選択してください
+
+        .product__box__form-label
+          %label.product__box__form-label__title
+            ブランド
+          %span.product__box__form-label__item__gray
+            任意
+          .product__box__brand
+            例) スノーピーク
+
+        .product__box__form-label
+          %label.product__box__form-label__title
+            商品の状態
+          %span.product__box__form-label__item
+            必須
+        .product__box__status
+          選択してください
+
+
+      .product__box
+        %p.product__box__genre
+          配送について
+        .product__box__form-label
+          %label.product__box__form-label__title
+            配送料の負担
+          %span.product__box__form-label__item
+            必須
+        .product__box__shiping-charge
+          選択してください
+
+        .product__box__form-label
+          %label.product__box__form-label__title
+            発送地域
+          %span.product__box__form-label__item
+            任意
+          .product__box__area
+            選択してください
+
+        .product__box__form-label
+          %label.product__box__form-label__title
+            発送までの日数
+          %span.product__box__form-label__item
+            必須
+        .product__box__days
+          選択してください
+
+
+      .product__calculation-box
+        %p.product__box__genre
+          価格 (¥300~¥9,999,999)
+        .product__calculation-box__band
+          .product__box__form-label
+            %label.product__box__form-label__title
+              販売価格
+            %span.product__box__form-label__item
+              必須
+          .product__calculation-box__band__price
+          %span.product__calculation-box__band__price__icon
+            ¥
+      .product__sales-commission
+        .product__sales-commission__label
+          販売手数料 (10%)
+        %span.product__sales-commission__number
+          ¥100
+      .product__sales-profit
+        .product__sales-profit__label
+          販売利益
+        %span.product__sales-profit__number
+          ¥900
+      .product__send
+        %button.product__send__sell
+          出品
+        %button.product__send__save
+          保存
+        = link_to 'もどる', "#", class: "product__send__redirect" 
+              
+
+
+    .footer
+      .footer__box
+        .footer__box__content
+          FURIMAについて
+          = link_to '会社概要 (運営会社)', "#", class: "footer__box__content__link"
+          = link_to 'プライバシーポリシー', "#", class: "footer__box__content__link"
+          = link_to '利用規約', "#", class: "footer__box__content__link"
+          = link_to 'ポイントに関する特約', "#", class: "footer__box__content__link"
+
+        .footer__box__content
+          FURIMAを見る
+          = link_to 'カテゴリー 一覧', "#", class: "footer__box__content__link"
+          = link_to 'ブランド 一覧', "#", class: "footer__box__content__link"
+
+        .footer__box__content
+          ヘルプ＆ガイド
+          = link_to 'ガイド', "#", class: "footer__box__content__link"
+          = link_to 'ロゴ利用ガイドライン', "#", class: "footer__box__content__link"
+          = link_to 'お知らせ', "#", class: "footer__box__content__link"
+
+      = link_to image_tag("logo-white.png", height: '50px', width: '185px', class: "footer__icon"
