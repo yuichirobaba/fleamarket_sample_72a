@@ -1,0 +1,73 @@
+%header.pcheader
+  .toppage
+    .topheader
+      %h1.icon
+        =link_to root_path do
+          = image_tag asset_path('logo.png'), size: "141x41"
+      
+      .seatch
+        %form{action:"#",acceptcharset:"UTF-8",method:"get",class:"seatch__form"}
+          %input{placeholder: "キーワードから探す",class:"seatch__box",type:"text",name:"seacth[content]",id:"seacth_content"}
+          %button{type:"submit",class:"seatch__submit"}
+            .seatch__icon
+              =image_tag asset_path('icon-search 1.png'),size:"20x20"
+    .category
+      %ul.listleft
+        .listleft__left
+          =link_to"#",class: "catbtn",id: "catbtn" do
+            カテゴリー
+          .treecategory
+            %ul.categoryrampage
+              %li.categoryrampage__item
+                =link_to"#",id:"1"do
+                  レディース
+              %li.categoryrampage__item
+                =link_to"#",id:"2"do
+                  メンズ
+              %li.categoryrampage__item
+                =link_to"#",id:"3"do
+                  ベビー・キッズ
+              %li.categoryrampage__item
+                =link_to"#",id:"4"do
+                  インテリア・住まい・小物
+              %li.categoryrampage__item
+                =link_to"#",id:"5"do
+                  本・音楽・ゲーム
+              %li.categoryrampage__item
+                =link_to"#",id:"6"do
+                  おもちゃ・ホビー・グッズ
+              %li.categoryrampage__item
+                =link_to"#",id:"7"do
+                  コスメ・香水・美容
+              %li.categoryrampage__item
+                =link_to"#",id:"8"do
+                  家電・スマホ・カメラ
+              %li.categoryrampage__item
+                =link_to"#",id:"9"do
+                  スポーツ・レジャー
+              %li.categoryrampage__item
+                =link_to"#",id:"10"do
+                  ハンドメイド
+              %li.categoryrampage__item
+                =link_to"#",id:"11"do
+                  チケット
+              %li.categoryrampage__item
+                =link_to"#",id:"12"do
+                  自動車・オートバイ
+              %li.categoryrampage__item
+                =link_to"#",id:"13"do
+                  その他
+
+
+
+        .listleft__right
+          =link_to "#" do
+            ブランド
+      %ul.listright
+        .listright__left
+          =link_to "#" do
+            ログイン
+        .listright__right
+          =link_to user_registration_path do
+            新規会員登録
+

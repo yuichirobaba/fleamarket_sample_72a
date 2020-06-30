@@ -1,0 +1,96 @@
+= render 'layouts/toppageheader'
+.contents
+  .products
+    .products-name
+      eee
+    .products-image
+      .products-image__main
+        = image_tag src="/assets/product-image1.jpg", width: '560px', class: 'product-image'
+      .products-image__sub
+        = image_tag src="/assets/product-image2.jpg",  width: '140px', class: 'product-image__sub'
+        = image_tag src="/assets/product-image3.jpg",  width: '140px', class: 'product-image__sub'
+    .price
+      ¥1000
+    .price__status
+      <span>
+      (税込)
+      </span>
+      <span>
+      送料込み
+      </span>
+    .product__text
+      eee
+    %table.product__details
+      %tr
+        %th 出品者
+        %td SS
+      %tr
+        %th カテゴリー
+        %td ベビー・キッズ 
+      %tr
+        %th ブランド
+        %td
+      %tr
+        %th 商品のサイズ
+        %td 
+      %tr
+        %th 商品の状態
+        %td 新品/未使用
+      %tr
+        %th 配送料の負担
+        %td 送料込み(出品者の負担)
+      %tr
+        %th 発送元の地域
+        %td 北海道
+      %tr
+        %th 発送日の目安
+        %td 1-2日で発送
+    .option
+      .option-like__btn
+        = link_to "#" do
+          = icon('fas', 'star', class: 'star-icon')
+          お気に入り 0
+      .option-report__btn
+        = icon('fas', 'flag', class: 'flag-icon')
+        不適切な商品の通報
+  .comment-box
+    %textarea.comment-box__text
+    %p.comment-box__msg
+      相手のことを考え丁寧なコメントを心がけましょう。
+      %br 不快な言葉遣いなどは利用制限や退会処分となることがあります。
+    %button{type: "submit", class: 'comment-box__btn'}
+      = icon('fas', 'comment', class: 'comment-icon')
+      コメントする
+  %ul.product-link
+    %li.product-link__btn
+      = link_to "#" do
+        = icon('fas', 'angle-left', class: 'angle-icon')
+        前の商品
+      = link_to "#" do
+        後ろの商品
+        = icon('fas', 'angle-right', class: 'angle-icon')
+    
+  .category
+    .category-link
+      = link_to "#" do
+        ベビー・キッズをもっと見る
+  .category-box
+    .category-image
+    = link_to "#" do 
+      = image_tag src="/assets/product_image4.jpg", width: '220px', class: 'category-img'
+      .category-box__body
+        %h1.category-box__name
+        product3
+        .category-detail
+          .category-detail__box
+            %li.category-detail__price
+              30000円
+            %li.category-detail__count
+              = icon('fas', 'star', class: 'category-icon')
+              0
+        %p.category-detail__tax
+          (税込)
+
+= render 'layouts/topagefooter'
+
+= render 'layouts/toppage_camerabtn'
