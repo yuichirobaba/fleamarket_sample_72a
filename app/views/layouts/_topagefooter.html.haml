@@ -1,0 +1,55 @@
+%aside.appinner
+  .inner
+    %h2.inner__subtitle だれでもかんたん、人生を変えるフリマアプリ
+    %p.inner__body 今すぐ無料ダウンロード！
+    .inner__app
+      =link_to "#"do
+        .appbtn=image_tag asset_path('AppleStore.svg'),size:"180x55"
+      =link_to "#"do
+        .goobtn=image_tag asset_path('googleplay.svg'),size:"180x55"
+
+  
+.footer
+  %ul.contents
+    %li.content
+      %h2.content__head FURIMAについて
+      %ul
+        %li
+          =link_to "#" do
+            会社概要（運営会社）
+        %li
+          =link_to "#" do
+            プライバシーポリシー
+        %li
+          =link_to "#" do
+            FURIMA利用規約
+        %li
+          =link_to "#" do
+            ポイントに関する規約
+
+    %li.content
+      %h2.content__head FURIMAを見る
+      %ul
+        %li
+          =link_to "#" do
+            カテゴリー一覧
+        %li
+          =link_to "#" do
+            ブランド一覧
+
+    %li.content
+      %h2.content__head ヘルプ＆ガイド
+      %ul
+        %li
+          =link_to "#" do
+            FURIMAガイド
+        %li
+          =link_to "#" do
+            FURIMAロゴ利用ガイドライン
+        %li
+          =link_to "#" do
+            お知らせ
+  .content__logo
+    =link_to "#" do
+      =image_tag ('logo-white.png'), size: "160x46"
+    %p ©️ FURIMA
