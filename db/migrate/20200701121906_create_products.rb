@@ -6,10 +6,10 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.integer :price, null: false
       t.string :brand
       t.string :size
-      t.string :shippingcharge, null: f
+      t.string :shippingcharge, null: false
       t.string :area, null: false
       t.string :days, null: false
-      t.reference :user, foreign_key: true
+      t.references :user, foreign_key: true
       # t.reference :category, foreign_key: true
       t.timestamps
     end
