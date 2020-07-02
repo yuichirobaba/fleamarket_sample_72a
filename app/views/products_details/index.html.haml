@@ -5,10 +5,10 @@
       eee
     .products-image
       .products-image__main
-        = image_tag src="/assets/product-image1.jpg", width: '560px', class: 'product-image'
+        = image_tag asset_path('product-image1.jpg'), width: '560px'
       .products-image__sub
-        = image_tag src="/assets/product-image2.jpg",  width: '140px', class: 'product-image__sub'
-        = image_tag src="/assets/product-image3.jpg",  width: '140px', class: 'product-image__sub'
+        = image_tag asset_path('product-image2.jpg'), width: '140px'
+        = image_tag asset_path('product-image3.jpg'), width: '140px'
     .price
       ¥1000
     .price__status
