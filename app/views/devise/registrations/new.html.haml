@@ -1,33 +1,81 @@
 = render 'layouts/sellheader'
-.wrapper
-  .sign-box
-    .sign-box__no-account
-      新規会員登録
-      %br/
-    .sign-box__from-sns
-      .sign-box__from-sns__mail
-        %i.fab.fa-mail-square.mail-icon
-        %span.mail-text
-        = link_to user_registration_signup_index_path, class: '' do
-          = fa_icon 'envelope', class: 'mail-icon'
-          メールアドレスで登録する
-      .sign-box__from-sns__google
-        %span.google-text
-        = link_to user_registration_path, class: '' do
-          = fa_icon 'google', class: 'google-icon'
-          googleで登録する
-      .sign-box__from-sns__facebook
-        %i.fab.fa-facebook-plus.facebook-icon
-        %span.facebook-text
-          = fa_icon 'facebook-square', class: 'facebook-icon'
-          facebookで登録する
-      .sign-box__from-sns__apple
-        %i.fab.fa-apple-plus.apple-icon
-        %span.apple-text
-          = fa_icon 'apple', class: 'apple-icon'
-          appleで登録する
-      .sign-box__text
-        登録することで、利用規約とプライバシーポリシーに
+.signup-view
+  .signup-view-block
+    .signup-view-block__form
+      会員情報入力
+    .signup-form
+      %label.signup-form__label
+        ニックネーム
+      %span.signup-form__span
+        必須
+      %br
+      %input.signup-form__login-input{:name => "nickname", :placeholder => "例）メルカリ太郎", :type => "email", :value => ""}/
+      
+      .signup-form
+      %label.signup-form__label
+        メールアドレス
+      %span.signup-form__span
+        必須
+      %br
+      %input.signup-form__login-input{:name => "nickname", :placeholder => "PC・携帯どちらでも可", :type => "email", :value => ""}/
+
+    .signup-form
+      %label.signup-form__label
+        パスワード
+      %span.signup-form__span
+        必須
+      %br
+      %input.signup-form__login-input{:name => "nickname", :placeholder => "７文字以上の半角英数字", :type => "email", :value => ""}/
+      %br
+      .signup-form__pass-text
+        ※ 英字と数字の両方を含めて設定してください
+
+    .signup-form
+      %input.signup-form__password-open-btn{ type: "checkbox" }
+      %p.signup-form__password-open-text パスワードを表示する
+    .signup-form
+      %h3.signup-form__identification
+        本人確認
+      %p.signup-form__explanation
+        安心・安全にご利用いただくために、お客さまの本人
         %br/
-        同意したものとみなされます。
+        情報の登録にご協力ください。他のお客さまに公開さ
+        %br/
+        れることはありません。
+
+    .signup-form
+      %label.signup-form__label
+        お名前(全角)
+      %span.signup-form__span
+        必須
+      %br
+      %input.signup-form__login-input2{:name => "nickname", :placeholder => "例)山田", :type => "email", :value => ""}/
+      %input.signup-form__login-input2{:name => "nickname", :placeholder => "例）彩", :type => "email", :value => ""}/
+
+    .signup-form
+      %label.signup-form__label
+        お名前カナ(全角)
+      %span.signup-form__span
+        必須
+      %br
+      %input.signup-form__login-input2{:name => "nickname", :placeholder => "例）ヤマダ", :type => "email", :value => ""}/
+      %input.signup-form__login-input2{:name => "nickname", :placeholder => "例）アヤ", :type => "email", :value => ""}/
+
+    .signup-form
+      %label.signup-form__label
+        生年月日
+      %span.signup-form__span
+        必須
+      %br
+      .signup-form__birthday-form
+        .signup-form__birthday-form__select
+        != sprintf(date_select(:date, :birthday, prefix:'birthday',with_css_classes:'XXXXX', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
+        %br/
+        ※本人情報は正しく入力してください。会員登録後、
+        %br/
+        修正するにはお時間を頂く場合があります。
+      .signup-form__login-btn
+        =link_to new_create_user_registration_path, class: '' do
+          %span.login-btn-text
+            次へ進む
 = render 'layouts/sellfooter'
