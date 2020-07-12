@@ -1,0 +1,34 @@
+= render 'layouts/sellheader'
+.wrapper
+  .sign-box
+    .sign-box__no-account
+      新規会員登録
+      %br/
+    .sign-box__from-sns
+      .sign-box__from-sns__mail
+        %i.fab.fa-mail-square.mail-icon
+        %span.mail-text
+        = link_to new_create_user_registration_path, class: '' do
+          =icon('fas','envelope',class: 'mail-icon')
+          メールアドレスで登録する
+      .sign-box__from-sns__google
+        %span.google-text
+        = link_to create_user_registration_path,class:'' do
+
+          =icon('fab','google',class: 'google-icon')
+          googleで登録する
+      .sign-box__from-sns__facebook
+        %i.fab.fa-facebook-plus.facebook-icon
+        %span.facebook-text
+          =icon('fab','facebook-square',class: 'facebook-icon')
+          facebookで登録する
+      .sign-box__from-sns__apple
+        %i.fab.fa-apple-plus.apple-icon
+        %span.apple-text
+          =icon('fab','apple', class: 'apple-icon')
+          appleで登録する
+      .sign-box__text
+        登録することで、利用規約とプライバシーポリシーに
+        %br/
+        同意したものとみなされます。
+= render 'layouts/sellfooter'
