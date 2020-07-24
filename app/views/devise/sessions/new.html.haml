@@ -13,17 +13,17 @@
       .login-form-inner__google
         %i.fab.fa-google-square.google-icon
         %span.google-text
-          = icon("fab", "google", class: 'google-icon')
+          =icon('fab','google',class: 'google-icon')
           Googleでログイン
       .login-form-inner__facebook
         %i.fab.fa-facebook-plus.facebook-icon
         %span.facebook-text
-          = icon("fab", "facebook-square", class: 'icon')
+          =icon('fab','facebook-square',class: 'icon')
           Facebookでログイン
       .login-form-inner__apple
         %i.fab.fa-apple-plus.apple-icon
         %span.apple-text
-          = icon("fab", "apple", class: 'icon')
+          =icon('fab','apple', class: 'icon')
           Appleでログイン
     .form-group
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|

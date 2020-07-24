@@ -22,7 +22,7 @@
       font-size: 14px;
     }
     &__span {
-      background: #ea352d;
+      background: #3CCACE;
       margin: 0 0 0 8px;
       padding: 2px 4px;
       border-radius: 2px;
@@ -110,7 +110,7 @@
       height:50px;
       width:365px;
       margin: 20px auto;
-      background-color: red;
+      background-color: #3CCACE;
       position: relative;
       color:white;
       border-radius: 4px;
@@ -119,10 +119,13 @@
         line-height:50px;
         position: absolute;
         left:40%  ;
+        text-decoration: none;
+        color: white;
       }
       
+    }
+   
     }
 
     }
   }
-}
