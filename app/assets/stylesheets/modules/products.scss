@@ -27,6 +27,9 @@
       justify-content: center;//水平方向
       align-items: center;//垂直方向
     }
+
+    
+
     .product{
       max-width: 700px;
       // height: 2000px;//（仮）の高さ後で子要素にぴったり合わせる
@@ -34,6 +37,7 @@
       width: 700px;
       margin: auto;
       &__box{
+        height: 100%;
         padding: 40px;
         border-bottom: solid 2px #f8f8f8;
         &__form-label{
@@ -51,9 +55,20 @@
             }
           }
         }
+
+        .image-box {
+          display: flex;
+          width: 100%;
+          height: 100%;
+          .item-image {
+            margin: 5px;
+            border: solid 1px #3ccace;
+          }
+        }
+        
         &__photo{
           height: 150px;
-          width: 620px;
+          width: 100%;
           background-color: lightgray;
           border-style: dashed;
           border-width: thin;
@@ -61,6 +76,10 @@
           flex-direction: column;
           justify-content: center;//水平方向
           align-items: center;//垂直方向
+          .icon-camera {
+            cursor: pointer;
+            font-size: 34px;
+          }
           &__line{
             margin-top: 2px;
             font-size: small;
@@ -79,29 +98,19 @@
           border: solid 2px #3ccace;
           border-width: thin;
           margin: 16px 0;
-          padding: 15px;
+          padding: 13px 15px;
           border-radius: 10px;
           p{
             padding-bottom: 30px;
           }
         }
-        &__category{
+        select {
           @include text
         }
         &__brand{
           @include text;
-          color: darkgrey; //これのみ変数に含まない
-        }
-        &__status{
-          @include text
-        }
-        &__shiping-charge{
-          @include text
         }
         &__area{
-          @include text
-        }
-        &__days{
           @include text
         }
 
@@ -113,16 +122,19 @@
           width: 620px;
           position: relative;
           &__price{
-            width: 280px;
-            height: 50px;
-            border: solid 2px #3ccace;
-            border-width: thin;
             line-height: 50px;
             padding-left: 15px;
-            border-radius: 10px;
             position: absolute;
             right: 0px;
             top: 0px;
+            input[type="number"] {
+              width: 280px;
+              height: 50px;
+              border: solid 2px #3ccace;
+              border-width: thin;
+              border-radius: 10px;
+              text-align: right;
+            }
             &__icon{
               position: absolute;
               right: 290px;
@@ -157,6 +169,7 @@
           background-color: olive;
           font-size: 17px;
           color: white;
+          cursor: pointer;
         }
         &__save{
           margin-top: 24px;
