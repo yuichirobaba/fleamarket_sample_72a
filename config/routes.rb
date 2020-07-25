@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     registrations: 'registrations',
   }
   root 'items#index'
-  resources :products
+  resources :products, except: :show
   resources :create_users
   resources :signup do
     collection do
