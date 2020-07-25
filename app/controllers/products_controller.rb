@@ -1,7 +1,5 @@
 class ProductsController < ApplicationController
 
-  # before_action :authenticate_user!
-
   def index
     @product = Product.new
     @products = Product.includes(:images).order('created_at DESC')
@@ -16,8 +14,11 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    # @product.save!
-    redirect_to products_details_path
+    if @product.save
+      redirect_to products_details_path
+    else
+      render :new
+    end
   end
 
   private
