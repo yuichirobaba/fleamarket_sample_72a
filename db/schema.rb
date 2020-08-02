@@ -18,6 +18,28 @@ ActiveRecord::Schema.define(version: 2020_07_24_051243) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "delivary_data", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "zipcode", null: false
+    t.integer "prefecture", null: false
+    t.string "city", null: false
+    t.string "address", null: false
+    t.integer "building", null: false
+    t.string "phone", null: false
+    t.bigint "create_user_id", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "email"
+    t.string "encrypted_password"
+    t.string "family_name"
+    t.string "first_name"
+    t.string "family_name_kana"
+    t.index ["create_user_id"], name: "index_delivary_data_on_create_user_id"
+    t.index ["reset_password_token"], name: "index_delivary_data_on_reset_password_token", unique: true
+  end
+
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image", null: false
     t.bigint "product_id"
@@ -64,6 +86,7 @@ ActiveRecord::Schema.define(version: 2020_07_24_051243) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "delivary_data", "users", column: "create_user_id"
   add_foreign_key "images", "products"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "users"
