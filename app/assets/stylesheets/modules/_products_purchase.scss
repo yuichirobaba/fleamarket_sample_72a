@@ -1,0 +1,39 @@
+.confirmation{
+  text-align: center;
+font-size:35px;
+font-weight: bold;
+}
+.pay{
+text-align: center;
+font-size:20px;
+font-weight: bold;
+}
+.cash{
+  text-align: center;
+  font-size:20px;
+  font-weight: bold;
+}
+.delivary{
+  text-align: center;
+  font-size:20px;
+  font-weight: bold;
+}
+.purchase{
+
+  background-color: #3ccace;
+  width: 200px;
+  height: 50px;
+  margin-left: 540px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  &__btn{
+text-align: center;
+padding-top: 10px;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+    font-size:20px;
+    font-weight: bold;
+}
+}

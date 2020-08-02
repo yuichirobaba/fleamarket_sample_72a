@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       get 'new3'
       get 'done'
   resources :products_details
+  resources :products_purchase
  end
 end
 end

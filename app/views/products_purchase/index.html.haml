@@ -1,0 +1,32 @@
+= render 'layouts/toppageheader'
+
+.content
+  =render 'layouts/product'
+  
+  .confirmation
+    .confirmation__last
+      ご購入確認
+  
+  .pay
+    .pay_pay
+      支払い金額（消費税込）
+    %br
+      ¥1000 
+    //rubyで後に設定
+  .cash
+    .cash_cash
+      支払い方法
+    //rubyで後に設定
+  .delivary
+    .delivary_place
+      配送先
+    //rubyで後に設定
+
+  .purchase
+    .purchase__btn
+      =link_to root_path do
+        購入する
+      //jsでtopページに購入完了のフラッシュメッセージを設定
+= render 'layouts/topagefooter'
+
+= render 'layouts/toppage_camerabtn'
