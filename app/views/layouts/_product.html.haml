@@ -1,0 +1,46 @@
+.contents
+  .products
+    .products-name
+      eee
+    .products-image
+      .products-image__main
+        = image_tag asset_path('product-image1.jpg'), width: '560px'
+      .products-image__sub
+        = image_tag asset_path('product-image2.jpg'), width: '140px'
+        = image_tag asset_path('product-image3.jpg'), width: '140px'
+    .price
+      ¥1000
+    .price__status
+      <span>
+      (税込)
+      </span>
+      <span>
+      送料込み
+      </span>
+    .product__text
+      eee
+    %table.product__details
+      %tr
+        %th 出品者
+        %td SS
+      %tr
+        %th カテゴリー
+        %td ベビー・キッズ 
+      %tr
+        %th ブランド
+        %td
+      %tr
+        %th 商品のサイズ
+        %td 
+      %tr
+        %th 商品の状態
+        %td 新品/未使用
+      %tr
+        %th 配送料の負担
+        %td 送料込み(出品者の負担)
+      %tr
+        %th 発送元の地域
+        %td 北海道
+      %tr
+        %th 発送日の目安
+        %td 1-2日で発送
