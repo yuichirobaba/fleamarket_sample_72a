@@ -11,25 +11,25 @@ describe Product do
     it "nameがない場合は出品できないこと" do
       product = build(:product, name: "")
       product.valid?
-      expect(product.errors[:name]).to include("can't be blank")
+      expect(product.errors[:name]).to include("を入力してください")
     end
 
     it "commentがない場合は出品できないこと" do
       product = build(:product, comment: "")
       product.valid?
-      expect(product.errors[:comment]).to include("can't be blank")
+      expect(product.errors[:comment]).to include("を入力してください")
     end
 
     it "commentが1001文字以上の場合、出品できないこと" do
       product = build(:product, comment: "a"*1001)
       product.valid?
-      expect(product.errors[:comment]).to include("is too long (maximum is 1000 characters)")
+      expect(product.errors[:comment]).to include("は1000文字以内で入力してください")
     end
 
     it "priceがない場合は出品できないこと" do
       product = build(:product, price: "")
       product.valid?
-      expect(product.errors[:price]).to include("can't be blank")
+      expect(product.errors[:price]).to include("を入力してください")
     end
 
     it "priceが300円の場合は出品できる" do
@@ -45,43 +45,43 @@ describe Product do
     it "priceが300円未満の場合は出品できない" do
       product = build(:product, price: "299")
       product.valid?
-      expect(product.errors[:price]).to include("must be greater than or equal to 300")
+      expect(product.errors[:price]).to include("は300以上の値にしてください")
     end
 
     it "priceが9,999,999円より高い場合は出品できない" do
       product = build(:product, price: "10000000")
       product.valid?
-      expect(product.errors[:price]).to include("must be less than or equal to 9999999")
+      expect(product.errors[:price]).to include("は9999999以下の値にしてください")
     end
 
     it "priceが数字でない場合(文字列の場合)は、出品できない" do
       product = build(:product, price: "abcde")
       product.valid?
-      expect(product.errors[:price]).to include("is not a number")
+      expect(product.errors[:price]).to include("は数値で入力してください")
     end
 
     it "shippingchargeがない場合は出品できない" do
       product = build(:product, shippingcharge: nil)
       product.valid?
-      expect(product.errors[:shippingcharge]).to include("can't be blank")
+      expect(product.errors[:shippingcharge]).to include("を入力してください")
     end
 
     it "areaがない場合は出品できない" do
       product = build(:product, area: "")
       product.valid?
-      expect(product.errors[:area]).to include("can't be blank")
+      expect(product.errors[:area]).to include("を入力してください")
     end
 
     it "daysがない場合は出品できない" do
       product = build(:product, days: "")
       product.valid?
-      expect(product.errors[:days]).to include(("can't be blank"))
+      expect(product.errors[:days]).to include(("を入力してください"))
     end
 
     it "categoryがない場合は出品できない" do
       product = build(:product, category_id: "")
       product.valid?
-      expect(product.errors[:category_id]).to include("can't be blank")
+      expect(product.errors[:category_id]).to include("を入力してください")
     end
   end
 end

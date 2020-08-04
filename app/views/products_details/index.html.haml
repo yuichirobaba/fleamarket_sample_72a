@@ -53,6 +53,10 @@
       .option-report__btn
         = icon('fas', 'flag', class: 'flag-icon')
         不適切な商品の通報
+    .products-purchase
+      .products-purchase__btn
+        =link_to  products_purchase_index_path do
+          購入する
   .comment-box
     %textarea.comment-box__text
     %p.comment-box__msg

@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
 
+  before_action :authenticate_create_user!
+
   def index
     @product = Product.new
     @products = Product.includes(:images).order('created_at DESC')
