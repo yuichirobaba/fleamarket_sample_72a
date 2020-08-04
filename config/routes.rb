@@ -1,21 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :delivary_data
-  devise_for :create_users,controllers:{
-    registrations: 'registrations',
+  devise_for :create_users, controllers: {
+    registrations: 'create_users/registrations',
   }
+  devise_scope :create_user do
+    get 'delivary_datas', to: 'create_users/registrations#new_delivary_data'
+    post  'delivary_datas', to: 'create_users/registrations#create_delivary_data'
+  end
   root 'items#index'
-  resources :products, except: :show
   resources :create_users
-  resources :signup do
-    collection do
-      get 'new'
-      get 'new2'
-      get 'new3'
-      get 'done'
+  resources :products, except: :show
   resources :products_details
   resources :products_purchase
- end
-end
 end
   
     

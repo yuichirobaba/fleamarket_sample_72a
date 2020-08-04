@@ -4,6 +4,7 @@
     width: 750px;
     height: 1050px;
     margin: 0 auto;
+    text-align: center;
     background-color: #fff;
     &__form {
       padding: 24px 16px 40px;
@@ -12,6 +13,20 @@
       font-size: 16px;
       font-weight: bold;
     }
+  }
+  .signup-view-block_1 {
+    width: 750px;
+    height: 1050px;
+    margin: 0 auto;
+    background-color: #fff;
+    &__form {
+      padding: 24px 16px 40px;
+      border-bottom: 1px solid #f5f5f5;
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
   .signup-form {
     margin: 10px 0 0;
     text-align: center;
@@ -87,17 +102,24 @@
     &__birthday-form {
       color: gray;
       font-size: 14px;
-      #birthday_birthday_1i {
+      &__select {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .birthday_birthday_1i {
+        height: 48px;
+        width: 78px;
+        background-color: white;
+        text-align: right;
+      }
+      .birthday_birthday_2i {
         height: 48px;
         width: 78px;
         background-color: white;
       }
-      #birthday_birthday_2i {
-        height: 48px;
-        width: 78px;
-        background-color: white;
-      }
-      #birthday_birthday_3i{
+      .birthday_birthday_3i{
         height: 48px;
         width: 78px;
         background-color: white;
@@ -125,7 +147,6 @@
       
     }
    
-    }
-
-    }
   }
+
+}
