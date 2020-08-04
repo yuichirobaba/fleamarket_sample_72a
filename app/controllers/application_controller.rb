@@ -1,16 +1,14 @@
 class ApplicationController < ActionController::Base
-  before_action :basic_auth, if: :devise_controller?
+  protect_from_forgery with: :exception
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
-  private
-  def devise_controller?
-    Rails.env.devise_controller?
+  protected
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up) do |user_params|
+      user_params.permit(:nickname, :email, :password, :password_confirmation,
+                         :family_name, :first_name, :family_name_kana, :first_name_kana, 
+                         :birthday_year, :birthday_month, :birthday_day)
+    end
   end
-
-  def basic_auth
-    authenticate_or_request_with_http_basic do |username, password|
-      username == Rails.application.credentials[:basic_auth][:user] &&
-      password == Rails.application.credentials[:basic_auth][:pass]
-      devise_parameter_anitizer.permit(:sing_up,keys:[:nickname,:family_name,:first_name,:family_name_kana,:first_name_kana,:birthday_year,:birthday_month,:birthbay_day])
-  end
-end
+  
 end

@@ -5,7 +5,8 @@
       %br/
       アカウントをお持ちでない方はこちら
       .login-no-account__new-account
-        = link_to new_create_user_registration_path do
+        = link_to new_registration_path do
+          %i.fab.fa-google-square.new-account-icon
           %span.new-account-text
             新規会員登録
     .login-form-inner
@@ -30,6 +31,7 @@
           = f.email_field :email, autocomplete: "email",placeholder:"メールアドレス"
         .form-group__password
           = f.password_field :password, autocomplete: "current-password",placeholder:"パスワード"
-          = f.submit "ログイン", class: "form-group__login-btn"
-            
+        .form-group__login-btn
+          %span.login-btn-text
+            ログイン
 = render 'layouts/sellfooter'

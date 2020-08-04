@@ -1,0 +1,73 @@
+= render 'layouts/sellheader'
+.signup-view
+  = form_for(@delivary_data, url: delivary_datas_path) do |f|
+    = @delivary_data.errors.full_messages
+    .signup-view-block
+      .signup-view-block__form
+        商品送付先住所情報入力
+      .signup-form
+        .signup-form__label
+          = f.label :zipcode
+        
+        %span.signup-form__span
+          必須
+        %br
+        = f.text_field :zipcode, class: 'signup-form__login-input', placeholder: "例)1234567(ハイフンなし)"
+
+      .signup-form
+        .signup-form__label
+          = f.label :prefecture
+        %span.signup-form__span
+          必須
+        %br
+        = f.text_field :prefecture, class: 'signup-form__login-input', placeholder: "例）フリマ県"
+      .signup-form
+        .signup-form__label
+          = f.label :city
+        %span.signup-form__span
+          必須
+        %br
+        = f.text_field :city, class: 'signup-form__login-input', placeholder: "例）フリマ市フリマ区"
+      .signup-form
+        .signup-form__label
+          = f.label :address
+        %span.signup-form__span
+          必須
+        %br
+        = f.text_field :address, class: 'signup-form__login-input', placeholder: "例）1-2-3"
+      .signup-form
+        .signup-form__label
+          = f.label :building
+        %span.signup-form__span
+          任意
+        %br
+        = f.text_field :building, class: 'signup-form__login-input', placeholder: "例）フリーマケットマンション123号室"
+
+      .signup-form
+        .signup-form__label
+          = f.label :phone
+        %span.signup-form__span
+          任意
+        %br
+        = f.telephone_field :phone, class: 'signup-form__login-input', placeholder: "例）ハイフンなし半角英数で入力"
+
+
+
+
+
+        
+        %p.signup-form__explanation
+          安心・安全にご利用いただくために、お客さまの本人
+          %br/
+          情報の登録にご協力ください。他のお客さまに公開さ
+          %br/
+          れることはありません。
+
+        .signup-form__birthday-form
+          %br/
+          ※本人情報は正しく入力してください。会員登録後、
+          %br/
+          修正するにはお時間を頂く場合があります。
+        = f.submit "登録", class: "signup-form__login-btn"
+
+= render 'layouts/sellfooter'
