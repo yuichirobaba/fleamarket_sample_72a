@@ -13,12 +13,14 @@
         %i.fab.fa-google-square.google-icon
         %span.google-text
           =icon('fab','google',class: 'google-icon')
-          Googleでログイン
+          = link_to 'Googleでログイン', create_user_google_oauth2_omniauth_authorize_path, method: :post
+          
       .login-form-inner__facebook
         %i.fab.fa-facebook-plus.facebook-icon
         %span.facebook-text
           =icon('fab','facebook-square',class: 'icon')
-          Facebookでログイン
+          = link_to 'Facebookでログイン', create_user_facebook_omniauth_authorize_path, method: :post
+          
       .login-form-inner__apple
         %i.fab.fa-apple-plus.apple-icon
         %span.apple-text
