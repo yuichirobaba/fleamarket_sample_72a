@@ -16,10 +16,18 @@ class CreateUsers::OmniauthCallbacksController < Devise::OmniauthCallbacksContro
   #   super
   # end
 
+  def facebook
+    authorization
+  end
+
+  def google_oauth2
+    authorization
+  end
+
   # GET|POST /users/auth/twitter/callback
-  # def failure
-  #   super
-  # end
+  def failure
+    redirect_to root_path
+  end
 
   # protected
 
@@ -27,4 +35,18 @@ class CreateUsers::OmniauthCallbacksController < Devise::OmniauthCallbacksContro
   # def after_omniauth_failure_path_for(scope)
   #   super(scope)
   # end
+
+  private
+
+  def authorization
+    sns_info = CreateUser.from_omniauth(request.env["omniauth.auth"])
+    @create_user = sns_info[:create_user]
+
+    if @create_user.persisted?
+      sign_in_and_redirect @create_user, event: :authentication
+    else
+      @sns_id = sns_info[:sns].id
+      render template: 'devise/registrations/new'
+    end
+  end
 end

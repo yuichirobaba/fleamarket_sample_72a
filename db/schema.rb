@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_30_145910) do
+ActiveRecord::Schema.define(version: 2020_08_05_064946) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 2020_07_30_145910) do
     t.datetime "updated_at", null: false
   end
 
-  
   create_table "create_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "email", default: "", null: false
@@ -78,6 +77,16 @@ ActiveRecord::Schema.define(version: 2020_07_30_145910) do
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.bigint "create_user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["create_user_id"], name: "index_sns_credentials_on_create_user_id"
+  end
+
   add_foreign_key "delivary_data", "create_users"
   add_foreign_key "images", "products"
+  add_foreign_key "sns_credentials", "create_users"
 end
