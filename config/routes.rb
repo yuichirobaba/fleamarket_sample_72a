@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     post  'delivary_datas', to: 'create_users/registrations#create_delivary_data'
   end
   root 'items#index'
+  resources :items
+  resources :products, except: :show
   resources :create_users
   resources :products, except: :show
   resources :products_details
