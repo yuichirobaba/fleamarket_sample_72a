@@ -25,7 +25,7 @@ class CreateUser < ApplicationRecord
     )
 
     if create_user.persisted?
-      sns.user = create_user
+      sns.create_user = create_user
       sns.save
     end
     { create_user: create_user, sns: sns }

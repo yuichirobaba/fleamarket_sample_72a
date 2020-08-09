@@ -16,7 +16,6 @@ class CreateUsers::RegistrationsController < Devise::RegistrationsController
       params[:create_user][:password] = pass
       params[:create_user][:password_confirmation] = pass
     end
-
     @create_user = CreateUser.new(sign_up_params)
     unless @create_user.valid?
       flash.now[:alert] = @create_user.errors.full_messages

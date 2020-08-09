@@ -43,7 +43,7 @@ class CreateUsers::OmniauthCallbacksController < Devise::OmniauthCallbacksContro
     @create_user = sns_info[:create_user]
 
     if @create_user.persisted?
-      sign_in_and_redirect @create_user, event: :authentication
+      sign_in_and_redirect @create_user, event: :authentication #this will throw if @user is not activated
     else
       @sns_id = sns_info[:sns].id
       render template: 'devise/registrations/new'
