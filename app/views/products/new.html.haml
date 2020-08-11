@@ -48,22 +48,23 @@
             
         
         .product__box
-          %p.product__box__genre
-            商品の詳細
-          .product__box__form-label
-            %label.product__box__form-label__title
-            カテゴリー
-            %span.product__box__form-label__item
-              必須
-          .product__box__category
-            = f.select :category_id, [["レディース", "レディース"], ["メンズ", "メンズ"], ["キッズ", "キッズ"]], include_blank: "選択して下さい"
+          .product__box-contents
+            %p.product__box__genre
+              商品の詳細
+            .product__box__form-label
+              %label.product__box__form-label__title
+              カテゴリー
+              %span.product__box__form-label__item
+                必須
+            .product__box__category
+              = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {promp: '---'}, {id: 'parent_category'}
 
-          .product__box__form-label
-            %label.product__box__form-label__title
-              ブランド
-            %span.product__box__form-label__item__gray
-              任意
-            = f.text_field :brand, class: "product__box__brand", placeholder: '例)スノーピーク'
+            .product__box__form-label
+              %label.product__box__form-label__title
+                ブランド
+              %span.product__box__form-label__item__gray
+                任意
+              = f.text_field :brand, class: "product__box__brand", placeholder: '例)スノーピーク'
 
           .product__box__form-label
             %label.product__box__form-label__title
