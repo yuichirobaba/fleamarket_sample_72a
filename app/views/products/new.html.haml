@@ -20,7 +20,7 @@
             .img-num-0#img-preview
             = f.fields_for :images, @product.images.build do |i|
               .product__box__photo
-                = i.file_field :image, class: 'input-btn', type: 'file', style: "display:none", id:"img-file"
+                = i.file_field :image, class: 'input-btn', type: 'file', style: "display:none", id:"img-file"#このid:image-fileの "中" にjsを全て組んでいる
                 %label{for: "img-file"}
                   %i.fas.fa-camera{class: 'icon-camera'}
                 %p.product__box__photo__lin
@@ -56,7 +56,7 @@
             %span.product__box__form-label__item
               必須
           .product__box__category
-            = f.select :category_id, [["レディース", "レディース"], ["メンズ", "メンズ"], ["キッズ", "キッズ"]], include_blank: "選択して下さい"
+            = f.select :category_id, [["レディース", 1], ["メンズ", 1], ["キッズ", 1]], include_blank: "選択して下さい"
 
           .product__box__form-label
             %label.product__box__form-label__title

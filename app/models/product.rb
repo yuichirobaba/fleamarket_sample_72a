@@ -4,7 +4,10 @@ class Product < ApplicationRecord
   has_many :images, dependent: :destroy
 
   accepts_nested_attributes_for :images, allow_destroy: true
-  validates :user_id, presence: true
+  
+
+
+  validates :create_user_id, presence: true
   validates :name, :category_id, :shippingcharge, :status, :area, :days, presence: :true
   validates :comment, presence: true, length: {maximum: 1000}
   validates :price, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}

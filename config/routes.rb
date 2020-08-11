@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   end
   root 'items#index'
   resources :items
-  resources :products, except: :show
   resources :create_users
   resources :products, except: :show
   resources :products_details
