@@ -48,15 +48,19 @@
             
         
         .product__box
-          %p.product__box__genre
-            商品の詳細
-          .product__box__form-label
-            %label.product__box__form-label__title
-            カテゴリー
-            %span.product__box__form-label__item
-              必須
-          .product__box__category
-            = f.select :category_id, [["レディース", 1], ["メンズ", 1], ["キッズ", 1]], include_blank: "選択して下さい"
+
+          .product__box-contents
+            %p.product__box__genre
+              商品の詳細
+            .product__box__form-label
+              %label.product__box__form-label__title
+              カテゴリー
+              %span.product__box__form-label__item
+                必須
+            .product__box__category
+              = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: '選択して下さい'}, {id: 'parent_category'}
+
+
 
           .product__box__form-label
             %label.product__box__form-label__title
@@ -118,12 +122,12 @@
           .product__sales-commission__label
             販売手数料 (10%)
           %span.product__sales-commission__number
-            ¥100
+            
         .product__sales-profit
           .product__sales-profit__label
             販売利益
-          %span.product__sales-profit__number
-            ¥900
+            = f.number_field :price, style: "display: none", id: "price"
+          .product__sales-commission__number2
         .product__send
           = f.submit '出品', class: 'product__send__sell'
           %button.product__send__save
