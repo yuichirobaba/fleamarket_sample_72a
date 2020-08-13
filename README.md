@@ -1,4 +1,4 @@
-# usersテーブル
+# create_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false|
@@ -21,19 +21,15 @@
 # delivery_datasテーブル
 |Column|Type|Options|
 |------|----|-------|
-|family_name|string|null: false|
-|first_name|string|null: false|
-|family_name_kana|string|null: false|
-|first_name_kana|string|null: false|
 |zipcode|integer|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
 |address|string|null: false|
 |building|integer||
 |phone|integer|
-|user|reference|null: false, foreign_key: true|
+|create_user|reference|null: false, foreign_key: true|
 ## Association
-- belongs_to :user
+- belongs_to :create_user
 
 # productsテーブル
 |Column|Type|Options|
@@ -46,10 +42,10 @@
 |shippingcharge|string|null: false|
 |area|string|null: false|
 |days|string|null: false|
-|user|reference|null: false, foreign_key: true|
+|create_user|reference|null: false, foreign_key: true|
 |category|reference|null: false, foreign_key: true|
 ## Association
-- belongs_to :user　dependent: :destroy
+- belongs_to :create_user　dependent: :destroy
 - belongs_to :category　dependent: :destroy
 - has_many :comments　dependent: :destroy
 - has_many :images　dependent: :destroy
@@ -65,20 +61,20 @@
 |Column|Type|Options|
 |------|----|-------|
 |content|text||
-|user|reference|null: false, foreign_key: true|
+|create_user|reference|null: false, foreign_key: true|
 |product|reference|null: false, foreign_key: true|
 ## Association
-- belongs_to :user
+- belongs_to :create_user
 - belongs_to :product
 
 # creditcardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user|reference|null: false, foreign_key: true|
+|create_user|reference|null: false, foreign_key: true|
 |customer|string|null: false|
 |card|string|null: false|
 ## Association
-- belongs_to :user
+- belongs_to :create_user
 
 # imagesテーブル
 |Column|Type|Options|
