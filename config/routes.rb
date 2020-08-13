@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     end
   end
   resources :create_users
+
   resources :products_details
   resources :products_purchase
 end

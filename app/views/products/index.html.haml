@@ -48,6 +48,7 @@
             
         
         .product__box
+
           .product__box-contents
             %p.product__box__genre
               商品の詳細
@@ -58,6 +59,7 @@
                 必須
             .product__box__category
               = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: '選択して下さい'}, {id: 'parent_category'}
+
 
 
           .product__box__form-label

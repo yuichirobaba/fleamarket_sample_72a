@@ -10,6 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
+ActiveRecord::Schema.define(version: 2020_08_13_061116) do
 ActiveRecord::Schema.define(version: 2020_08_10_122852) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -70,13 +72,16 @@ ActiveRecord::Schema.define(version: 2020_08_10_122852) do
     t.string "shippingcharge", null: false
     t.string "area", null: false
     t.string "days", null: false
+
     t.bigint "create_user_id", null: false
     t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "status"
     t.index ["category_id"], name: "index_products_on_category_id"
-    t.index ["create_user_id"], name: "index_products_on_user_id"
+
+    t.index ["create_user_id"], name: "index_products_on_create_user_id"
+   
   end
 
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -86,9 +91,13 @@ ActiveRecord::Schema.define(version: 2020_08_10_122852) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["create_user_id"], name: "index_sns_credentials_on_create_user_id"
+
   end
 
   add_foreign_key "delivary_data", "create_users"
   add_foreign_key "images", "products"
+  add_foreign_key "products", "categories"
+  add_foreign_key "products", "create_users"
+
   add_foreign_key "sns_credentials", "create_users"
 end

@@ -2,7 +2,7 @@
 .contents
   .products
     .products-name
-      eee
+      =@product.name
     .products-image
       .products-image__main
         = image_tag asset_path('product-image1.jpg'), width: '560px'
@@ -10,7 +10,7 @@
         = image_tag asset_path('product-image2.jpg'), width: '140px'
         = image_tag asset_path('product-image3.jpg'), width: '140px'
     .price
-      ¥1000
+      =@product.price
     .price__status
       <span>
       (税込)
@@ -23,16 +23,20 @@
     %table.product__details
       %tr
         %th 出品者
-        %td SS
+        %td 
+          =@create_user.name
       %tr
         %th カテゴリー
-        %td ベビー・キッズ 
+        %td 
+          =@product.category_id
       %tr
         %th ブランド
         %td
+          =@product.brand
       %tr
         %th 商品のサイズ
         %td 
+          =@product.size
       %tr
         %th 商品の状態
         %td 新品/未使用
