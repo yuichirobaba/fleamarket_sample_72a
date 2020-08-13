@@ -102,4 +102,23 @@ $(function() {
       })
     })
   }
+  $(function() {
+    $('#product_price').on('input', function() {
+      var data = $('#product_price').val();
+      var profit = Math.round(data * 0.9)
+      var fee = (data - profit)
+
+      $('.product__sales-commission__number').html(fee)
+
+      $('.product__sales-commission__number').prepend('¥')
+      $('.product__sales-commission__number2').html(profit)
+      $('.product__sales-commission__number2').prepend('¥')
+      $('#price').val(profit)
+
+      if(profit == '') {
+        $('.product__sales-commission__number2').html('');
+        $('.product__sales-commission__number').html('');
+      }
+    })
+  })
 });
