@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :products, except: :show
   resources :create_users
   resources :products, except: :show
-  resources :products_details
+  resources :products_details 
   resources :products_purchase
 end
   

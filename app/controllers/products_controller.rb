@@ -15,6 +15,7 @@ class ProductsController < ApplicationController
   end
 
   def create
+    binding.pry
     @product = Product.new(product_params)
     if @product.save
       redirect_to products_details_path
@@ -28,6 +29,7 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(
       :name, :comment, :price, :brand, :size, :shippingcharge, :status,
-      :area, :days, :category_id, images_attributes: [:image])
+      :area, :days, :category_id, images_attributes: [:image]).merge(create_user_id: current_create_user.id)
+    end
   end
-end
+  
