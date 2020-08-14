@@ -39,16 +39,20 @@
           =@product.size
       %tr
         %th 商品の状態
-        %td 新品/未使用
+        %td 
+          =@product.status
       %tr
         %th 配送料の負担
-        %td 送料込み(出品者の負担)
+        %td 
+          =@product.shoppingcharge
       %tr
         %th 発送元の地域
-        %td 北海道
+        %td 
+          =@product.area
       %tr
         %th 発送日の目安
-        %td 1-2日で発送
+        %td 
+          =@product.days
     .option
       .option-like__btn
         = link_to "#" do
