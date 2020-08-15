@@ -8,16 +8,15 @@ Rails.application.routes.draw do
   end
   root 'items#index'
   resources :items
-  resources :products, except: :show do
+  resources :products do
     collection do
       get 'category/get_category_children', to: 'products#get_category_children', defaults: { format: 'json' }
       get 'category/get_category_grandchildren', to: 'products#get_category_grandchildren', default: { format: 'json' }
     end
   end
   resources :create_users
-
-  resources :products_details
   resources :products_purchase
 end
+
   
     
