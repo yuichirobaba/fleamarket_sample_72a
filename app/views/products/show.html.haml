@@ -19,16 +19,16 @@
       送料込み
       </span>
     .product__text
-      eee
+      =@product.comment
     %table.product__details
       %tr
         %th 出品者
         %td 
-          =@create_user.name
+          =@product.name
       %tr
         %th カテゴリー
         %td 
-          =@product.category_id
+          =@product.category.name
       %tr
         %th ブランド
         %td
@@ -44,7 +44,7 @@
       %tr
         %th 配送料の負担
         %td 
-          =@product.shoppingcharge
+          =@product.shippingcharge
       %tr
         %th 発送元の地域
         %td 

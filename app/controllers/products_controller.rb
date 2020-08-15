@@ -27,11 +27,12 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to products_details_path
+      redirect_to products_path
     else
-      render :new
+      render :show
     end
   end
+
 
   private
 
@@ -41,4 +42,5 @@ class ProductsController < ApplicationController
       :area, :days, :category_id, images_attributes: [:image]).merge(create_user_id: current_create_user.id)
     end
   end
+
   

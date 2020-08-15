@@ -1,6 +1,5 @@
 class ProductsDetailsController < ApplicationController
-  def index
-  end
   def show
-  end 
+    @product = Product.find(product_id: params[:product_id])
+  end
 end
