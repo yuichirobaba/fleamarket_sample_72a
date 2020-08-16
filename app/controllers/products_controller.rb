@@ -27,12 +27,18 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to products_path
+      render "products/show"
     else
-      render :show
+      render :index
     end
   end
 
+
+  def destroy
+    product = Product.find(params[:id])
+    product.destroy
+    redirect_to root_path
+  end
 
   private
 
