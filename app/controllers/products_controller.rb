@@ -27,12 +27,21 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to products_path
+      render "products/show"
+    else
+      render :index
+    end
+  end
+
+
+  def destroy
+    product = Product.find(params[:id])
+    if product.create_user_id == current_create_user.id && product.destroy
+      redirect_to root_path, notice: '削除されました'
     else
       render :show
     end
   end
-
 
   private
 

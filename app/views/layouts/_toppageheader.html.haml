@@ -64,10 +64,16 @@
           =link_to "#" do
             ブランド
       %ul.listright
-        .listright__left
-          =link_to "#" do
-            ログイン
-        .listright__right
-          =link_to create_user_registration_path do
-            新規会員登録
-
+        - if create_user_signed_in?
+          %p
+            ログインしています
+          %li.log-out
+          = link_to "ログアウト", destroy_create_user_session_path, method: :delete, class: "log-btn"
+        - else
+          %p
+            ログインしていません
+            %li.log-in_left
+              = link_to "ログイン", new_create_user_session_path, class: "log-btn"
+            %li.log-in_right
+              = link_to "新規会員登録", new_create_user_registration_path, class: "log-btn"
+          
