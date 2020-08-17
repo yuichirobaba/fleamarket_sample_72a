@@ -36,8 +36,7 @@ class ProductsController < ApplicationController
 
   def destroy
     product = Product.find(params[:id])
-    if product.create_user_id == current_create_user.id
-      product.destroy
+    if product.create_user_id == current_create_user.id && product.destroy
       redirect_to root_path, notice: '削除されました'
     else
       render :show
