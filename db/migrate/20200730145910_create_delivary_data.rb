@@ -7,7 +7,7 @@ class CreateDelivaryData < ActiveRecord::Migration[5.2]
       t.string  :address, null: false
       t.string  :building
       t.string  :phone
-      t.references :user, foreign_key: true
+      t.references :create_user, foreign_key: true
       t.timestamps
     end
   end
