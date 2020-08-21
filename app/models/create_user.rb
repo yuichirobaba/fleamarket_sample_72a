@@ -14,5 +14,5 @@ class CreateUser < ApplicationRecord
             format: { with: /\A([ァ-ン]|ー)+\z/, message: "is must NOT contain any other characters than alphanumerics." }
   has_one :delivary_data
   has_many :products
-
+  has_many :creditcards
 end

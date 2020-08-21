@@ -1,0 +1,76 @@
+ul {
+  list-style: none;
+  display: flex;
+  li {
+    margin: 0 5px;
+  }
+}
+.number {
+  margin-top: 230px;
+  height: 30px;
+  font-size: 24px;
+}
+label {
+  font-weight: bold;
+  font-size: 16px;
+}
+.require {
+  background-color: #3ccace;
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
+}
+
+.card-number {
+  width: 100vw;
+  height: 120px;
+  margin: auto;
+}
+.limt-number {
+  width: 100vw;
+  height: 120px;
+  margin: auto;
+}
+
+.cvc-number {
+  width: 100vw;
+  height: 120px;
+  margin: auto;
+}
+
+.card-submit {
+  background-color: #3ccace;
+  padding: 5px 20px;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.credit-show__content {
+  width: 100vw;
+  .credit-show__text {
+    font-weight: bold;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 21px;
+  }
+  .form-content {
+    text-align: center;
+    height: 140px;
+    .delete-btn {
+      margin-top: 10px;
+      padding: 5px 10px;
+      background-color: #3ccace;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+}

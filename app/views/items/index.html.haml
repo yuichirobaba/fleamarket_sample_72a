@@ -69,6 +69,7 @@
           ログインしています
         %li.log-out
         = link_to "ログアウト", destroy_create_user_session_path, method: :delete, class: "log-btn"
+        = link_to "マイページ", mypages_path, class: "log-btn"
       - else
         %p
           ログインしていません

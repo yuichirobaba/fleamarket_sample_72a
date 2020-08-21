@@ -1,0 +1,233 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  display: flex;
+  padding: 50px 100px;
+  background-color: #f8f8f8;
+  width: 100vw;
+  height: 100vh;
+  .side-bar {
+    background-color: #f8f8f8;
+    width: 400px;
+    height: 100%;
+    border-right: solid 2px #f8f8f8;
+    &__menu {
+      padding: 0 10px;
+      a {
+        text-decoration: none;
+        .btn {
+          background-color: rgb(60, 202, 206);
+          margin-bottom: 5px;
+          height: 50px;
+          width: 100%;
+          color: #ffffff;
+          padding-right: 20px;
+          line-height: 50px;
+          padding-left: 30px;
+          border: solid 3px rgb(60, 202, 206);
+        }
+        
+      }
+    }
+  }
+
+  .main-content {
+    background-color: white;
+    width: calc(100% - 400px);
+    .account-information {
+      width: 100%;
+      height: 100px;
+      display: flex;
+      &__image {
+        background-color: #f8f8f8;
+        width: 100px;
+        height: 100px;
+        border: solid 2px rgb(60, 202, 206);
+        img {
+          width: 50px;
+          height: 50px;
+          margin: 25px 25px;
+          
+        }
+      }
+      &__list {
+        width: 100%;
+        height: 100px;
+        line-height: 100px;
+        padding-left: 30px;
+      }
+    }
+    .item {
+      width: 100%;
+      &__exhibit {
+        &__title {
+          text-align: center;
+          padding-top: 30px;
+          border-top: solid 60px #f8f8f8;
+          font-weight: bold;
+        }
+        &__list {
+          display: flex;
+          overflow: scroll;
+          margin: 20px 95px;
+          &__content {
+            a {
+              text-decoration: none;
+              .item__exhibit__list__content__image {
+                width: 150px;
+                height: 100px;
+                img {
+                  width: 150px;
+                  height: 100px;
+                }
+              }
+              .item__exhibit__list__content__information {
+                width: 150px;
+                height: 50px;
+                background-color: #f8f8f8;
+                color: #333;
+                padding-left: 5px;
+              }
+            }
+          }
+        }
+      }
+      &__purchase {
+        &__title {
+          text-align: center;
+          padding-top: 30px;
+          border-top: solid 40px #f8f8f8;
+          font-weight: bold;
+        }
+        &__list {
+          display: flex;
+          overflow: scroll;
+          margin: 20px 95px;
+          &__content {
+            a {
+              text-decoration: none;
+              .item__purchase__list__content__image {
+                width: 150px;
+                height: 100px;
+                display: flex;
+                img {
+                  width: 150px;
+                  height: 100px;
+                  justify-content: space-around;
+                }
+              }
+              .item__purchase__list__content__information {
+                width: 150px;
+                height: 50px;
+                background-color: #f8f8f8;
+                color: #333;
+                padding-left: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .logout {
+    background-color: #fff;
+    width: calc(100% - 400px);
+    height: 200px;
+    padding: 75px ;
+    .content {
+      height: 50px;
+      width: 100%;
+      a {
+        text-decoration: none;
+        .btn {
+          background-color: rgb(60, 202, 206);
+          height: 50px;
+          width: 200px;
+          color: #fff;
+          line-height: 50px;
+          border-radius: 4px;
+          text-align: center;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+  .card {
+    background-color: #fff;
+    width: calc(100% - 400px);
+    height: 650px;
+    &__head {
+      text-align: center;
+      padding: 5px 0;
+      font-size: 25px;
+      font-weight: bold;
+      border-bottom: solid 5px #f8f8f8;
+    }
+    .form {
+      margin: 50px 150px;
+      .registration {
+        margin-top: 30px;
+        .title {
+          display: flex;
+          &__font {
+            font-weight: 600px;
+          }
+          &__icon {
+            margin-left: 5px;
+            background-color: #ea352d;
+            color: #fff;
+            border-radius: 2px;
+            padding: 2px 4px;
+            font-size: 12px;
+          }
+        }
+        .text {
+          width: 100%;
+          height: 48px;
+          margin-top: 8px;
+          padding-left: 10px;
+        }
+        .select {
+          width: 100px;
+          height: 48px;
+          margin-top: 8px;
+          padding-left: 10px;
+        }
+      }
+      .button {
+        background-color: rgb(60, 202, 206);
+        width: 100%;
+        height: 48px;
+        color: #fff;
+        margin-top: 100px;
+        text-align: center;
+        border: none;
+        border-radius: 2px;
+      }
+    }
+  }
+}
