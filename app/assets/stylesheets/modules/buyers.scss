@@ -33,7 +33,14 @@
   text-align: center;
   font-size: 21px;
   background-color: #ffffee;
-  
+  &__title {
+    width: 100vw;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+  }
 }
 .buy-content__attention__title {
   width: 100vw;
@@ -47,7 +54,7 @@
   display: flex;
   width: 100vw;
   height: 100px;
-  .buy-content__item__inner {
+  &__inner {
     margin: auto;
   }
   .buy-form {
@@ -56,13 +63,16 @@
     .buy-price-table {
       display: flex;
       justify-content: space-between;
-    }
-    .buy-price-table__left {
-      font-weight: bold;
-    }
-    .buy-price-table__right {
-      font-size: 24px;
-      font-weight: bold;
+      height: 50px;
+      &__left {
+        font-weight: bold;
+        line-height: 50px;
+      }
+      &__right {
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 50px;
+      }
     }
   }
   .buy-content__user-info__submit {
@@ -72,7 +82,7 @@
     border-radius: 5px;
     background-color: #3ccace;
     cursor: pointer;
-    .buy-content__user-info__submit__button {
+    &__button {
       color: white;
       font-weight: bold;
     }
