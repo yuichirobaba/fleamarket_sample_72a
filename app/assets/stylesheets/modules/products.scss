@@ -5,7 +5,7 @@
 
 @import "config/mixin";
 
-.wrapper{
+.wrappers{
   vertical-align: baseline;
   margin: 0px;
   padding: 0px;
@@ -16,8 +16,9 @@
   font: inherit;
   .display{
     display: flex;
+    margin: auto;
     flex-direction: column;//フレックスコンテナー内で主軸の方向を:積み重なる様に配置する
-    min-height: 100vh;// <IMG>・ <INPUT>・ <TEXTAREA>・ <SELECT>などの高さの最小値の指定
+    min-height: 100%;// <IMG>・ <INPUT>・ <TEXTAREA>・ <SELECT>などの高さの最小値の指定
     background-color: #f8f8f8;
     .header{
       height: 128px;
