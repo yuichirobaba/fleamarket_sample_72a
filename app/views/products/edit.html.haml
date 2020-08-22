@@ -27,8 +27,8 @@
               = f.fields_for :images do |image|
                 .edit-js-file_group{"data-index" => "#{image.index}"}
                   = image.file_field :image, class: 'edit-js-file', style: "display:none", type: 'file', id:"img-file"
-                  %label{for: "img-file"}
-                    %i.fas.fa-camera{class: 'icon-camera'}
+                  -# %label{for: "img-file"}
+                  -#   %i.fas.fa-camera{class: 'icon-camera'}
                   .js-remove 削除
                 - if @product.persisted?
                   = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
