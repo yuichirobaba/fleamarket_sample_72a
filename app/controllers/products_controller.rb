@@ -27,10 +27,14 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      render "products/show"
+      redirect_to product_path(@product)
     else
       render :index
     end
+  end
+
+  def show
+    @product = Product.find(params[:id])
   end
 
 
