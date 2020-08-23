@@ -1,7 +1,10 @@
-.signup-card-list　{
+.signup-card-list {
   list-style: none;
   li {
     margin: 0 5px;
+  }
+  ul {
+    display: flex;
   }
 }
 .number {

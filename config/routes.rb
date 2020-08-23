@@ -15,11 +15,12 @@ Rails.application.routes.draw do
       get 'category/get_category_children', to: 'products#get_category_children', default: { format: 'json' }
       get 'category/get_category_grandchildren', to: 'products#get_category_grandchildren', default: { format: 'json' }
     end
-    resources :buyers, only: [:index] do
-      collection do
-        post 'pay', to: 'buyers#pay'
-        get 'done', to: 'buyers#done'
-      end
+    
+  end
+  resources :buyers, only: [:index] do
+    collection do
+      post 'pay', to: 'buyers#pay'
+      post 'done', to: 'buyers#done'
     end
   end
   resources :products_purchase
