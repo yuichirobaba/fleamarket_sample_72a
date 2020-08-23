@@ -9,7 +9,7 @@ FactoryBot.define do
     days              {"1~2日で発送"}
     shippingcharge    {"送料込み(出品者負担)"}
     category_id       {"1"}
-    user_id           {"1"}
+    create_user_id    {"1"}
     status            {"新品"}
   end
 end

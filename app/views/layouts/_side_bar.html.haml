@@ -1,14 +1,14 @@
 .side-bar 
     .side-bar__menu
-        = link_to '#' do
+        = link_to products_path do
             .btn
                 出品する
         = link_to '#' do
             .btn
                 本人情報
-        = link_to '#' do
+        = link_to new_creditcard_path do
             .btn
                 支払い方法
-        = link_to '#' do
+        = link_to destroy_create_user_session_path, method: :delete do
             .btn
                 ログアウト

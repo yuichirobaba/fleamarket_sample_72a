@@ -69,6 +69,7 @@
           ログインしています
         %li.log-out
         = link_to "ログアウト", destroy_create_user_session_path, method: :delete, class: "log-btn"
+        = link_to "マイページ", mypages_path, class: "log-btn"
       - else
         %p
           ログインしていません
@@ -184,58 +185,19 @@
         
       .productlists
         .productlist
-          =link_to products_path do
+        - @product.each do |product|
+          =link_to product_path(@product) do
             %figure.productlist__img
-              =image_tag asset_path('reebok.jpg')
+              =image_tag product.images.first.image.url, size: "width:220"
             .productlist__text
-              %h3.name reebok
+              %h3
+                = product.name
               .text
                 %ul
-                  %li 25000円
+                  %li 
+                  = "#{product.price.to_s}円"
                   %li.icon
                     = icon('fas', 'star')
-                    0
-                %p （税込）
-
-        .productlist
-          =link_to "#" do
-            %figure.productlist__img
-              =image_tag asset_path('stansmith.jpg')
-            .productlist__text
-              %h3.name adidas
-              .text
-                %ul
-                  %li 20000円
-                  %li.icon
-                    = icon('fas', 'star')
-                    0
-                %p （税込）
-
-        .productlist
-          =link_to "#" do
-            %figure.productlist__img
-              =image_tag asset_path('nike-air-max-95.jpg')
-            .productlist__text
-              %h3.name nike
-              .text
-                %ul
-                  %li 20000円
-                  %li.icon
-                    =icon('fas', 'star')
-                    0
-                %p （税込）
-
-        .productlist
-          =link_to "#" do
-            %figure.productlist__img
-              =image_tag asset_path('converse.jpg')
-            .productlist__text
-              %h3.name converse
-              .text
-                %ul
-                  %li 6000円
-                  %li.icon
-                    =icon('fas', 'star')
                     0
                 %p （税込）
 
