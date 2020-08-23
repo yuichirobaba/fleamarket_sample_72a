@@ -34,7 +34,7 @@ class BuyersController < ApplicationController
   end
 
   def set_product
-    @product = Product.find(params[:id])
+    @product = Product.find_by(params[:id])
   end
   
 end
