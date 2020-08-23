@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
   root 'items#index'
   resources :items, only: [:index]
-  resources :products, only: [:index, :new, :create, :destroy] do
+  resources :products, only: [:index, :new, :create, :destroy, :show] do
     collection do
       get 'category/get_category_children', to: 'products#get_category_children', defaults: { format: 'json' }
       get 'category/get_category_grandchildren', to: 'products#get_category_grandchildren', default: { format: 'json' }
