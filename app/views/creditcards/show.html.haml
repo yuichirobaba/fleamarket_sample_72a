@@ -12,7 +12,7 @@
     = form_tag(creditcard_path(current_create_user.id), method: :delete, id: 'charge-form',  name: "inputForm") do
       %input{ type: "hidden", name: "card_id", value: "" }
       %button.delete-btn 削除する
-    = link_to mypages_path do
+    = link_to root_path do
       .re-btn
         戻る
 = render 'layouts/sellfooter'

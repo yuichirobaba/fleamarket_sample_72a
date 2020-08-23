@@ -19,7 +19,7 @@ class BuyersController < ApplicationController
       :customer => @creditcard.customer_id,
       :currency => 'jpy',
     )
-    redirect_to done_product_buyers_path
+    redirect_to pay_buyers_path(@product)
   end
 
   def done
@@ -34,7 +34,7 @@ class BuyersController < ApplicationController
   end
 
   def set_product
-    @product = Product.find(params[:id])
+    @product = Product.find_by(params[:id])
   end
   
 end

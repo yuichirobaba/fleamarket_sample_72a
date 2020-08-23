@@ -45,6 +45,6 @@
         大阪府大阪市北区〇〇1-11
         %br
         山田太郎
-        = form_tag pay_creditcards_path(@product), action: :pay, method: :post do
+        = form_tag buyers_done_path, action: :pay, method: :post do
           %button.buy-button{type:"submit"} 購入する
 = render 'layouts/sellfooter'
