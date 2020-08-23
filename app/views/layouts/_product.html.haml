@@ -1,7 +1,7 @@
 .contents
   .products
     .products-name
-      @product.name
+      =@product.name
     .products-image
       .products-image__main
         = image_tag asset_path('product-image1.jpg'), width: '560px'
@@ -9,7 +9,7 @@
         = image_tag asset_path('product-image2.jpg'), width: '140px'
         = image_tag asset_path('product-image3.jpg'), width: '140px'
     .price
-      @product.price
+      =@product.price
     .price__status
       <span>
       (税込)
@@ -18,37 +18,37 @@
       送料込み
       </span>
     .product__text
-      @product.comment
+      =@product.comment
     %table.product__details
       %tr
         %th 出品者
         %td 
-          @create_user.name
+          =current_create_user.nickname
       %tr
         %th カテゴリー
         %td 
-          @product.category_id
+          =@product.category_id.name
       %tr
         %th ブランド
         %td
-          @product.brand
+          =@product.brand
       %tr
         %th 商品のサイズ
         %td 
-          @product.size
+          =@product.size
       %tr
         %th 商品の状態
         %td 
-          @product.status
+          =@product.status
       %tr
         %th 配送料の負担
         %td 
-          @product.shoppingcharge
+          =@product.shippingcharge
       %tr
         %th 発送元の地域
         %td
-          @product.area
+          =@product.area
       %tr
         %th 発送日の目安
         %td 
-          @product.days
+          =@product.days
