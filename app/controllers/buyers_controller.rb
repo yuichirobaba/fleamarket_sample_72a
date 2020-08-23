@@ -19,7 +19,7 @@ class BuyersController < ApplicationController
       :customer => @creditcard.customer_id,
       :currency => 'jpy',
     )
-    redirect_to done_products_detail_buyers_path
+    redirect_to done_product_buyers_path
   end
 
   def done

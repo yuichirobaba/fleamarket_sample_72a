@@ -5,10 +5,12 @@
       =@product.name
     .products-image
       .products-image__main
-        = image_tag asset_path('product-image1.jpg'), width: '560px'
+        = image_tag @product.images.first.image.url, width: '560px'
+    
       .products-image__sub
-        = image_tag asset_path('product-image2.jpg'), width: '140px'
-        = image_tag asset_path('product-image3.jpg'), width: '140px'
+      - @product.images.each do |product|
+        = image_tag product.image.url, width: '140px'
+        = image_tag product.image.url, width: '140px'
     .price
       =@product.price
     .price__status
@@ -24,7 +26,7 @@
       %tr
         %th 出品者
         %td 
-          =@product.name
+          =current_create_user.nickname
       %tr
         %th カテゴリー
         %td 
@@ -69,7 +71,7 @@
   - else
     .products-purchase
       .products-purchase__btn
-        =link_to  products_purchase_index_path do
+        =link_to buyers_index_path(@product) do
           購入する
   .comment-box
     %textarea.comment-box__text
