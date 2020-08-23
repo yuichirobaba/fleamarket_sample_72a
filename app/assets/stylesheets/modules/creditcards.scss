@@ -1,12 +1,10 @@
-.signup-card-list　ul {
+.signup-card-list　{
   list-style: none;
-  display: flex;
   li {
     margin: 0 5px;
   }
 }
 .number {
-  margin-top: 230px;
   height: 30px;
   font-size: 24px;
 }
@@ -29,6 +27,9 @@ label {
   width: 100vw;
   height: 120px;
   margin: auto;
+  ul{
+    display: flex;
+  }
 }
 .limt-number {
   width: 100vw;
