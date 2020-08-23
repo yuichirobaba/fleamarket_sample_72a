@@ -5,7 +5,8 @@
       =@product.name
     .products-image
       .products-image__main
-        = image_tag @product.images.first.image.url, width: '560px'
+      - @product.images.each do |image| 
+        = image_tag @product.images[0].image.to_s, width: '560px'
       .products-image__sub
         = image_tag asset_path('product-image2.jpg'), width: '140px'
         = image_tag asset_path('product-image3.jpg'), width: '140px'
