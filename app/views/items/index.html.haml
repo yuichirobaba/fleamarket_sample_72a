@@ -188,7 +188,7 @@
         - @product.each do |product|
           =link_to product_path(product.id) do
             %figure.productlist__img
-              =image_tag product.images.first.image.url, size: "width:220"
+              =image_tag product.images[0].image.url, size: "width:220"
             .productlist__text
               %h3
                 = product.name

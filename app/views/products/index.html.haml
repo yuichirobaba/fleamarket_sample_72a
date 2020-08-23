@@ -20,7 +20,7 @@
             .img-num-0#img-preview
             = f.fields_for :images, @product.images.build do |i|
               .product__box__photo
-                = i.file_field :image, class: 'input-btn', type: 'file', style: "display:none", id:"img-file"
+                = i.file_field :image, class: 'input-btn', type: 'file', name: "product[images_attributes][][image]", style: "display:none", id:"img-file"
                 %label{for: "img-file"}
                   %i.fas.fa-camera{class: 'icon-camera'}
                 %p.product__box__photo__lin
