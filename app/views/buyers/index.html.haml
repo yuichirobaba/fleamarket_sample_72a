@@ -5,7 +5,7 @@
   .buy-content__product__inner
     .buy-product-main
       .buy-product-image
-        = image_tag @product.images.first.image.url, class: 'buydetails-contet__image'
+        = image_tag @product.images[0].image.url, class: 'buydetails-contet__image'
       .buy-product-detail
         .buy-product-name
           = @product.name
@@ -42,9 +42,9 @@
       .user-info-text
         〒111-1111
         %br
-        大阪府大阪市北区〇〇1-11
+        大阪府大阪市浪速区〇〇1-11
         %br
         山田太郎
-        = form_tag buyers_done_path, action: :pay, method: :post do
+        = form_tag pay_product_buyers_path(@product), action: :pay, method: :post do
           %button.buy-button{type:"submit"} 購入する
 = render 'layouts/sellfooter'
