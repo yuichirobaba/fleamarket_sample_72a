@@ -38,7 +38,7 @@ class CreditcardsController < ApplicationController
   def show
     creditcard = Creditcard.find_by(create_user_id: current_create_user.id)
     if creditcard.blank?
-      redirect_to new creditcard_path
+      redirect_to new_creditcard_path
     else
       Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
       customer = Payjp::Customer.retrieve(creditcard.customer_id)
