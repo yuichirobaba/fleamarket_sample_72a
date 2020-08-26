@@ -107,18 +107,25 @@
         
         &__photo{
           height: 150px;
-          width: 100%;
+          width: 620px;
           background-color: lightgray;
           border-style: dashed;
           border-width: thin;
           display: flex;
-          flex-direction: column;
-          justify-content: center;//水平方向
-          align-items: center;//垂直方向
+          // flex-direction: column;
+          position: relative;
           .icon-camera {
             cursor: pointer;
             font-size: 34px;
+            position: absolute;
+            right: 300px;
+            bottom: 60px;
           }
+            &__image {
+              width: 114px;
+              height: 100%;
+              background-color: white;
+            }
           &__line{
             margin-top: 2px;
             font-size: small;
@@ -263,4 +270,69 @@
       
     }
   }
-}
+  // .js-file{
+  //   width: 114px;
+    
+  // }
+  // .js-file_group{
+  //   margin: 5px;
+  //   border: solid 1px #3ccace;
+  // }
+
+  // .js-remove{
+  //   padding-bottom: initial;
+  // }
+  #image-box__container{
+    display: flex;
+    justify-content: start;
+  }
+  .image-box{
+    height: 150px;
+    width: 620px;
+    background-color: lightgray;
+    border-style: dashed;
+    border-width: thin;
+    display: flex;
+    position: relative;
+  }
+
+
+  #image-boxs{
+    height: 150px;
+    width: 620px;
+    background-color: lightgray;
+    border-style: dashed;
+    border-width: thin;
+    display: flex;
+    position: relative;
+    display: flex;
+  }
+  .edit-js-file_group{
+    height: 70px;
+    width: 114px;
+    // position: absolute;
+    bottom: 0px;
+    justify-content: start;
+    margin-top: 81px;
+    margin-left: 0px;
+
+  }
+  #previews{
+    position: relative;
+    top: 0px;
+    display: flex;
+    justify-content: start;
+    height: 80px;
+  }
+  // .edit-js-file{
+  //   display: none;
+  // }
+  
+  }
+
+
+
+// .js-file-edit{
+//   display: none;
+// }
+
