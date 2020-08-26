@@ -3,6 +3,8 @@ class BuyersController < ApplicationController
   before_action :set_card, :set_product
 
   def index
+    @delivary_data = DelivaryData.where(create_user_id: current_create_user.id).first
+    @create_user = current_create_user
     if @creditcard.blank?
       redirect_to new_creditcard_path
     else
