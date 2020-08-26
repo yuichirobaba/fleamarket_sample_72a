@@ -55,7 +55,45 @@
               @include item;
             }
           }
+        }#image-boxs{
+          height: 150px;
+          width: 620px;
+          background-color: lightgray;
+          border-style: dashed;
+          border-width: thin;
+          display: flex;
+          position: relative;
+          display: flex;
         }
+        .edit-js-file_group{
+          height: 70px;
+          width: 114px;
+          // position: absolute;
+          bottom: 0px;
+          justify-content: start;
+          border: solid 2px #3ccace;
+          margin-left: 0px;
+          background-color: #f8f8f8;
+      
+        }
+        #previews{
+          position: absolute;
+          top: 0px;
+          display: flex;
+          justify-content: start;
+          height: 80px;
+        }
+        #button{
+          position: absolute;
+          bottom: 0px;
+          display: flex;
+          justify-content: start;
+          height: 70px;
+        }
+
+
+
+
 
         .image-box {
           display: flex;
@@ -207,6 +245,22 @@
       &__icon{
         margin-top: 50px;
       }
+      // #image-box__container{
+      //   display: flex;
+      //   justify-content: start;
+      // }
+      // .image-box{
+      //   height: 150px;
+      //   width: 620px;
+      //   background-color: lightgray;
+      //   border-style: dashed;
+      //   border-width: thin;
+      //   display: flex;
+      //   position: relative;
+      // }
+    
+    
+      
     }
   }
 }

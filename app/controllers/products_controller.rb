@@ -47,6 +47,35 @@ class ProductsController < ApplicationController
     end
   end
 
+  def edit  #newとの違いはまず検索をかけなくてはいけない点にある。よってfind、find_by,whereなどの検索メソッドが必須
+    @product = Product.find(params[:id])
+    
+    @category_parent_arry = ["---"]
+    @category_parent_arry = Category.where(ancestry: nil)
+
+    # @category_child_array = @product.category.parent.parent.children
+    # @category_grandchild_array = @product.category.parent.children
+
+
+    # @product = Product.find(params[:id])
+    # @user = CreateUser.find(@product.create_user_id)#最初にこの処理を持ってくる事で、商品を出品したユーザーのみが編集出来る
+    # @images = Image.where(product_id: params[:id])
+    # @images_first = Image.where(product_id: params[:id]).first #firstは配列の先頭の要素を持ってくる、恐らくトップページ等に映し出される商品の顔(仮)
+
+    
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    if @product.update(product_update_params)
+      redirect_to product_path(@product)
+    else
+      render :edit
+    end
+   
+  end
+  
+
   private
 
   def product_params
@@ -54,6 +83,11 @@ class ProductsController < ApplicationController
       :name, :comment, :price, :brand, :size, :shippingcharge, :status,
       :area, :days, :category_id, images_attributes: [:image]).merge(create_user_id: current_create_user.id)
     end
+
+  def product_update_params
+    params.require(:product).permit(
+      :name, :comment, :price, :brand, :size, :shippingcharge, :status,
+      :area, :days, :category_id, images_attributes: [:image, :_destroy, :id]).merge(create_user_id: current_create_user.id)
   end
 
-  
+end

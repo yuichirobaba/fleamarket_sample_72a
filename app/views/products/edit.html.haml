@@ -1,0 +1,158 @@
+.wrappers
+
+  .display
+    = form_for @product do |f|
+      .header
+        = link_to root_path do
+          = image_tag("logo.png", height: '50px', width: '185px', class: "header__icon")
+        
+      .product
+        .product__box
+          .product__box__form-label
+            %label.product__box__form-label__title
+              商品画像
+            %span.product__box__form-label__item
+              必須
+          %p.product__box__number-sheets
+            .product__box__photo-box
+              最大10枚までアップロード出来ます
+            #image-boxs
+              #previews
+                
+                - if @product.persisted?
+                  - @product.images.each_with_index do |image, i|
+                    = image_tag image.image.url, data: { index: i }, width: "114", height: '80'
+              #button
+                = f.fields_for :images do |image|
+                  .edit-js-file_group{"data-index" => "#{image.index}"}
+                    = image.file_field :image, class: 'edit-js-file', style: "display:none", type: 'file', id:"img-file"
+                    %label{for: "img-file"}
+                      %i.fas.fa-camera{class: 'icon-camera'}
+                    .js-remove 削除
+                  - if @product.persisted?
+                    = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+                - if @product.persisted?
+                  .edit-js-file_group{"data-index" => "#{@product.images.count}"}
+                    = file_field_tag :image, name: "item[images_attributes][#{@product.images.count}][image]", class: 'edit-js-file', style: "display:none", type: 'file', id:"edit-file"
+                    %label{for: "edit-file"}
+                      %i.fas.fa-camera{class: 'icon-camera'}
+                    .js-remove 削除
+       
+        .product__box
+          .product__box__form-label
+            %label.product__box__form-label__title
+              商品名
+            %span.product__box__form-label__item
+              必須
+            = f.text_field :name, class: "product__box__name", placeholder: '商品名を入力してください'
+            
+
+          .product__box__form-label
+            %label.product__box__form-label__title
+              商品の説明
+            %span.product__box__form-label__item
+              必須
+          
+            = f.text_area :comment, class: "product__box__explanation", placeholder: '商品の説明（必須 1,000文字以内）(色、素材、重さ、定価、注意点など)&#13;例)2019年に購入したキャップです、1度被っただけで傷も汚れもありません'
+            
+              
+              
+            
+        
+        .product__box
+
+          .product__box-contents
+            %p.product__box__genre
+              商品の詳細
+            .product__box__form-label
+              %label.product__box__form-label__title
+              カテゴリー
+              %span.product__box__form-label__item
+                必須
+            .product__box__category
+              
+              .listing-select-wrapper--edit__parent
+                = f.collection_select :category_id, Category.roots, :id, :name ,{prompt: "選択してください", selected:  @product.category.parent.parent_id}, {class: 'listing-select-wrapper--edit__parent--select', id: 'parent_category_edit', name: "" }
+              .listing-select-wrapper--edit__child
+                = f.collection_select :category_id, @product.category.parent.parent.children, :id, :name ,{prompt: "選択してください", selected: @product.category.parent_id}, {class: 'listing-select-wrapper--edit__child--select', id: 'child_category_edit', name: "" }
+              .listing-select-wrapper--edit__grandchild
+                = f.collection_select :category_id,@product.category.parent.children, :id, :name ,{prompt: "選択してください", selected: @product.category.id}, {class: 'listing-select-wrapper--edit__grandchild--select', id: 'grandchild_category_edit', name: "product[category_id]" }
+
+
+
+          .product__box__form-label
+            %label.product__box__form-label__title
+              ブランド
+            %span.product__box__form-label__item__gray
+              任意
+            = f.text_field :brand, class: "product__box__brand", placeholder: '例)スノーピーク'
+
+          .product__box__form-label
+            %label.product__box__form-label__title
+              商品の状態
+            %span.product__box__form-label__item
+              必須
+          .product__box__status
+            = f.select :status, [["未使用/新品", "未使用/新品"], ["未使用に近い", "未使用に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"], ["やや傷や汚れあり", "やや傷や汚れあり"]], include_blank: "選択して下さい"
+        .product__box
+          %p.product__box__genre
+            配送について
+          .product__box__form-label
+            %label.product__box__form-label__title
+              配送料の負担
+            %span.product__box__form-label__item
+              必須
+          .product__box__shiping-charge
+            = f.select :shippingcharge, [["送料込み(出品者負担)", "送料込み(出品者負担)"], ["着払い(購入者負担)", "着払い(購入者負担)"]], include_blank: "選択して下さい"
+          .product__box__form-label
+            %label.product__box__form-label__title
+              発送地域
+            %span.product__box__form-label__item
+              任意
+            = f.select :area, options_for_select(Product.areas.keys), {prompt: "選択してください", selected:  @product[:area]}, class: 'product__box__area'
+            -# = f.collection_select :category_id, Category.roots, :id, :name ,{prompt: "選択してください", selected:  @product.category.parent.parent_id}, {class: 'listing-select-wrapper--edit__parent--select', id: 'parent_category_edit', name: "" }
+              
+
+          .product__box__form-label
+            %label.product__box__form-label__title
+              発送までの日数
+            %span.product__box__form-label__item
+              必須
+          .product__box__days
+            = f.select :days, [["1~2日で発送", "1~2日で発送"], ["2~3日で発送", "2~3日で発送"], ["4~7日で発送", "4~7日で発送"]], include_blank: "選択して下さい"
+
+
+        .product__calculation-box
+          %p.product__box__genre
+            価格 (¥300~¥9,999,999)
+          .product__calculation-box__band
+            .product__box__form-label
+              %label.product__box__form-label__title
+                販売価格
+              %span.product__box__form-label__item
+                必須
+            .product__calculation-box__band__price
+              = f.number_field :price
+            %span.product__calculation-box__band__price__icon
+              ¥ 
+              
+              
+        .product__sales-commission
+          .product__sales-commission__label
+            販売手数料 (10%)
+          %span.product__sales-commission__number
+            
+        .product__sales-profit
+          .product__sales-profit__label
+            販売利益
+            .price-box{id: "price"}
+          .product__sales-commission__number2
+        .product__send
+          = f.submit '出品', class: 'product__send__sell'
+          %button.product__send__save
+            保存
+          = link_to 'もどる', "#", class: "product__send__redirect"
+                
+
+
+= render 'layouts/topagefooter'
