@@ -8,7 +8,7 @@
     .buy-content__item__inner
       .buy-item-main
         .buy-item-image
-          = image_tag @product.images.first.image.url, class: 'buydetails-contet__image'
+          = image_tag @product.images[0].image.url, class: 'buydetails-contet__image'
         .buy-item-detail
           .buy-item-name
             = @product.name

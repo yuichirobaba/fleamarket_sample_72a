@@ -5,12 +5,10 @@
       =@product.name
     .products-image
       .products-image__main
-      - @product.images.each do |image| 
         = image_tag @product.images[0].image.to_s, width: '400px'
       .products-image__sub
       - @product.images.each do |product|
-        = image_tag asset_path('reebok.jpg'), width: '140px'
-        = image_tag asset_path('reebok.jpg'), width: '140px'
+        = image_tag product.image.url, width: '140px'
     .price
       =@product.price
     .price__status
@@ -74,7 +72,7 @@
   - else
     .products-purchase
       .products-purchase__btn
-        =link_to buyers_index_path(@product) do
+        =link_to product_buyers_path(@product) do
           購入する
   .comment-box
     %textarea.comment-box__text

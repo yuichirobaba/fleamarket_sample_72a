@@ -5,7 +5,7 @@
   .buy-content__product__inner
     .buy-product-main
       .buy-product-image
-        = image_tag @product.images.first.image.url, class: 'buydetails-contet__image'
+        = image_tag @product.images[0].image.url, class: 'buydetails-contet__image'
       .buy-product-detail
         .buy-product-name
           = @product.name
@@ -40,11 +40,19 @@
       .user-info-update
         = link_to "変更する","#", calss:"update-btn"
       .user-info-text
-        〒111-1111
+        = "〒#{@delivary_data.zipcode}"
         %br
-        大阪府大阪市北区〇〇1-11
+        = @delivary_data.prefecture
         %br
-        山田太郎
-        = form_tag buyers_done_path, action: :pay, method: :post do
+        = @delivary_data.city
+        = @delivary_data.address
+        %br
+        = @delivary_data.building
+        %br
+        = "tel:#{@delivary_data.phone}"
+        %br
+        = @create_user.family_name
+        = @create_user.first_name
+        = form_tag pay_product_buyers_path(@product), action: :pay, method: :post do
           %button.buy-button{type:"submit"} 購入する
 = render 'layouts/sellfooter'
