@@ -15,4 +15,5 @@ class CreateUser < ApplicationRecord
   has_one :delivary_data
   has_many :products
   has_many :creditcards
+  has_ancestry
 end

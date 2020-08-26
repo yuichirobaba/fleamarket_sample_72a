@@ -10,6 +10,7 @@ class Product < ApplicationRecord
   validates :price, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}
 
   enum area:{
+
      北海道:"北海道",青森県:"青森県",岩手県:"岩手県",宮城県:"宮城県",秋田県:"秋田県",山形県:"山形県",福島県:"福島県",
      茨城県:"茨城県",栃木県:"栃木県",群馬県:"群馬県",埼玉県:"埼玉県",千葉県:"千葉県",東京都:"東京都",神奈川県:"神奈川県",
      新潟県:"新潟県",富山県:"富山県",石川県:"石川県",福井県:"福井県",山梨県:"山梨県",長野県:"長野県",岐阜県:"岐阜県",
