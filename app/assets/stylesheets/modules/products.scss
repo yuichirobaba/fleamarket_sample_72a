@@ -17,23 +17,22 @@
   .display{
     display: flex;
     margin: auto;
-    flex-direction: column;//フレックスコンテナー内で主軸の方向を:積み重なる様に配置する
-    min-height: 100%;// <IMG>・ <INPUT>・ <TEXTAREA>・ <SELECT>などの高さの最小値の指定
+    flex-direction: column;
+    min-height: 100%;
     background-color: #f8f8f8;
     .header{
       height: 128px;
       width: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: center;//水平方向
-      align-items: center;//垂直方向
+      justify-content: center;
+      align-items: center;
     }
-
     
 
     .product{
       max-width: 700px;
-      // height: 2000px;//（仮）の高さ後で子要素にぴったり合わせる
+      
       background-color:white;
       width: 700px;
       margin: auto;
@@ -84,7 +83,7 @@
           height: 80px;
         }
         #button{
-          position: absolute;
+          position: relative;
           bottom: 0px;
           display: flex;
           justify-content: start;
@@ -251,37 +250,10 @@
       }
       &__icon{
         margin-top: 50px;
-      }
-      // #image-box__container{
-      //   display: flex;
-      //   justify-content: start;
-      // }
-      // .image-box{
-      //   height: 150px;
-      //   width: 620px;
-      //   background-color: lightgray;
-      //   border-style: dashed;
-      //   border-width: thin;
-      //   display: flex;
-      //   position: relative;
-      // }
-    
-    
-      
+      } 
     }
   }
-  // .js-file{
-  //   width: 114px;
-    
-  // }
-  // .js-file_group{
-  //   margin: 5px;
-  //   border: solid 1px #3ccace;
-  // }
-
-  // .js-remove{
-  //   padding-bottom: initial;
-  // }
+  
   #image-box__container{
     display: flex;
     justify-content: start;
@@ -324,15 +296,4 @@
     justify-content: start;
     height: 80px;
   }
-  // .edit-js-file{
-  //   display: none;
-  // }
-  
   }
-
-
-
-// .js-file-edit{
-//   display: none;
-// }
-

@@ -2,15 +2,9 @@ $(function () {
   const buildFileField = (num)=> {
     const html = `<div data-index="${num}" class="edit-js-file_group">
                     <input class="edit-js-file" type="file" style="display: none" 
-<<<<<<< HEAD
                     name="product[images_attributes][${num}][image]"
                     id="item_images_attributes_${num}_image">
                     <label for="product_images_attributes_${num}_image"><i class="icon-camera fas fa-camera"></i></label>
-=======
-                    name="item[images_attributes][${num}][image]"
-                    id="item_images_attributes_${num}_image">
-                    <label for="item_images_attributes_${num}_image"><i class="icon-camera fas fa-camera"></i></label>
->>>>>>> cd54a49eebaccb8518d7e9bf0f407d15245aed9f
                     <div class="js-remove">削除</div>
                   </div>`;
     return html;
