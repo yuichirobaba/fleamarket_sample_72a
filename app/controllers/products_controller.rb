@@ -52,8 +52,6 @@ class ProductsController < ApplicationController
   end
 
   def edit  #newとの違いはまず検索をかけなくてはいけない点にある。よってfind、find_by,whereなどの検索メソッドが必須  
-    @category_parent_arry = ["---"]
-    @category_parent_arry.unshift(["---"])
     @category_parent_arry = Category.where(ancestry: nil)
   end
 
