@@ -20,6 +20,11 @@
       </span>
     .product__text
       =@product.comment
+    - if create_user_signed_in? && current_create_user.id == @product.create_user_id
+      .product-edit
+        .product-edit__btn
+          = link_to edit_product_path(@product) do
+            編集する
     %table.product__details
       %tr
         %th 出品者
@@ -64,6 +69,7 @@
       .option-report__btn
         = icon('fas', 'flag', class: 'flag-icon')
         不適切な商品の通報
+
   - if create_user_signed_in? && current_create_user.id == @product.create_user_id
     .product-delete
       .product-delete__btn
@@ -74,6 +80,8 @@
       .products-purchase__btn
         =link_to product_buyers_path(@product) do
           購入する
+  
+  
   .comment-box
     %textarea.comment-box__text
     %p.comment-box__msg

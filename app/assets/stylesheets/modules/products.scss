@@ -17,23 +17,22 @@
   .display{
     display: flex;
     margin: auto;
-    flex-direction: column;//フレックスコンテナー内で主軸の方向を:積み重なる様に配置する
-    min-height: 100%;// <IMG>・ <INPUT>・ <TEXTAREA>・ <SELECT>などの高さの最小値の指定
+    flex-direction: column;
+    min-height: 100%;
     background-color: #f8f8f8;
     .header{
       height: 128px;
       width: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: center;//水平方向
-      align-items: center;//垂直方向
+      justify-content: center;
+      align-items: center;
     }
-
     
 
     .product{
       max-width: 700px;
-      // height: 2000px;//（仮）の高さ後で子要素にぴったり合わせる
+      
       background-color:white;
       width: 700px;
       margin: auto;
@@ -55,7 +54,44 @@
               @include item;
             }
           }
+        }#image-boxs{
+          height: 150px;
+          width: 620px;
+          background-color: lightgray;
+          border-style: dashed;
+          border-width: thin;
+          display: flex;
+          position: relative;
+          display: flex;
         }
+        .edit-js-file_group{
+          height: 70px;
+          width: 114px;
+          bottom: 0px;
+          justify-content: start;
+          border: solid 2px #3ccace;
+          margin-left: 0px;
+          background-color: #f8f8f8;
+      
+        }
+        #previews{
+          position: absolute;
+          top: 0px;
+          display: flex;
+          justify-content: start;
+          height: 80px;
+        }
+        #button{
+          position: relative;
+          bottom: 0px;
+          display: flex;
+          justify-content: start;
+          height: 70px;
+        }
+
+
+
+
 
         .image-box {
           display: flex;
@@ -69,18 +105,24 @@
         
         &__photo{
           height: 150px;
-          width: 100%;
+          width: 620px;
           background-color: lightgray;
           border-style: dashed;
           border-width: thin;
           display: flex;
-          flex-direction: column;
-          justify-content: center;//水平方向
-          align-items: center;//垂直方向
+          position: relative;
           .icon-camera {
             cursor: pointer;
             font-size: 34px;
+            position: absolute;
+            right: 300px;
+            bottom: 60px;
           }
+            &__image {
+              width: 114px;
+              height: 100%;
+              background-color: white;
+            }
           &__line{
             margin-top: 2px;
             font-size: small;
@@ -206,7 +248,49 @@
       }
       &__icon{
         margin-top: 50px;
-      }
+      } 
     }
   }
-}
+  
+  #image-box__container{
+    display: flex;
+    justify-content: start;
+  }
+  .image-box{
+    height: 150px;
+    width: 620px;
+    background-color: lightgray;
+    border-style: dashed;
+    border-width: thin;
+    display: flex;
+    position: relative;
+  }
+
+
+  #image-boxs{
+    height: 150px;
+    width: 620px;
+    background-color: lightgray;
+    border-style: dashed;
+    border-width: thin;
+    display: flex;
+    position: relative;
+    display: flex;
+  }
+  .edit-js-file_group{
+    height: 70px;
+    width: 114px;
+    bottom: 0px;
+    justify-content: start;
+    margin-top: 81px;
+    margin-left: 0px;
+
+  }
+  #previews{
+    position: relative;
+    top: 0px;
+    display: flex;
+    justify-content: start;
+    height: 80px;
+  }
+  }
