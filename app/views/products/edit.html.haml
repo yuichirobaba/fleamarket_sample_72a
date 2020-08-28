@@ -33,7 +33,7 @@
                     = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
                 - if @product.persisted?
                   .edit-js-file_group{"data-index" => "#{@product.images.count}"}
-                    = file_field_tag :image, name: "product[images_attributes][#{@product.images.count}][image]", class: 'edit-js-file', style: "display:none", type: 'file', id:"edit-file"
+                    = file_field_tag :image, name: "item[images_attributes][#{@product.images.count}][image]", class: 'edit-js-file', style: "display:none", type: 'file', id:"edit-file"
                     %label{for: "edit-file"}
                       %i.fas.fa-camera{class: 'icon-camera'}
                     .js-remove 削除
@@ -75,7 +75,6 @@
                 = f.collection_select :category_id, @product.category.parent.parent.children, :id, :name ,{prompt: "選択してください", selected: @product.category.parent_id}, {class: 'listing-select-wrapper--edit__child--select', id: 'child_category_edit', name: "" }
               .listing-select-wrapper--edit__grandchild
                 = f.collection_select :category_id,@product.category.parent.children, :id, :name ,{prompt: "選択してください", selected: @product.category.id}, {class: 'listing-select-wrapper--edit__grandchild--select', id: 'grandchild_category_edit', name: "product[category_id]" }
-                
           .product__box__form-label
             %label.product__box__form-label__title
               ブランド
