@@ -20,11 +20,10 @@
         = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?238737266",width:"32px",height:"20px"
         %li
         = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/discover.svg?238737266",width:"32px",height:"20px"
-    %br
-    .limit-number
+      %br
       %label 有効期限
       .require 必須
-      %select#exp_month{name: "exp_month", type: "text", class: "exp-month"}
+      %select#exp_month{name: "exp_month", type: "text"}
         %option{value: ""} --
         %option{value: "1"}01
         %option{value: "2"}02
@@ -39,7 +38,7 @@
         %option{value: "11"}11
         %option{value: "12"}12
       %span 月/
-      %select#exp_year{name: "exp_year", type: "text", class: "exp-year"}
+      %select#exp_year{name: "exp_year", type: "text"}
         %option{value: ""} --
         %option{value: "2020"}20
         %option{value: "2021"}21
@@ -53,14 +52,13 @@
         %option{value: "2029"}29
         %option{value: "2030"}30
       %span 年
-    %br
-    %br
-    .cvc-number
+      %br
+      %br
       %label セキュリティコード
       .require 必須
       = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
       %br
       #card_token
       %br
-    = submit_tag "追加する", id: "token_submit", class: "card-submit"
+      = submit_tag "追加する", id: "token_submit", class: "card-submit"
 = render 'layouts/sellfooter'
