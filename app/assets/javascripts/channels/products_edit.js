@@ -3,7 +3,7 @@ $(function () {
     const html = `<div data-index="${num}" class="edit-js-file_group">
                     <input class="edit-js-file" type="file" style="display: none" 
                     name="product[images_attributes][${num}][image]"
-                    id="item_images_attributes_${num}_image">
+                    id="product_images_attributes_${num}_image">
                     <label for="product_images_attributes_${num}_image"><i class="icon-camera fas fa-camera"></i></label>
                     <div class="js-remove">削除</div>
                   </div>`;
