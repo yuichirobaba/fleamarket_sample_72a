@@ -12,8 +12,8 @@ Rails.application.routes.draw do
   resources :items, only: [:index]
   resources :products do
     collection do
-      get 'category/get_category_children', to: 'products#get_category_children', defaults: { format: 'json' }
-      get 'category/get_category_grandchildren', to: 'products#get_category_grandchildren', defaults: { format: 'json' }
+      get 'category/get_category_children', to: 'products#get_category_children', defaults: { fomat: 'json' }
+      get 'category/get_category_grandchildren', to: 'products#get_category_grandchildren', defaults: { fomat: 'json' }
     end
     resources :buyers, only: [:index] do
       collection do
