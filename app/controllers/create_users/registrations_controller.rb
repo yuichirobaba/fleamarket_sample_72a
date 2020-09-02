@@ -32,7 +32,7 @@ class CreateUsers::RegistrationsController < Devise::RegistrationsController
     @create_user.build_delivary_data(@delivary_data.attributes)
     @create_user.save
     session["devise.regist_data"]["user"].clear
-    sign_in(:user, @create_user)
+    sign_in(@create_user)
   end
 
   # GET /resource/edit
