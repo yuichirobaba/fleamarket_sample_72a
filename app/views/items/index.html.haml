@@ -188,11 +188,7 @@
         - @product.each do |product|
           =link_to product_path(product.id) do
             %figure.productlist__img
-              =image_tag product.images[0].image.url, size: "width:220"
-              -# - if @product.buyer_id.present?
-              -#   .product-photo__sold
-              -#     .product-hoto__sold-text
-              -#       SOLD
+              = image_tag product.images[0].image_url, size: "width:220"
             .productlist__text
               %h3
                 = product.name
